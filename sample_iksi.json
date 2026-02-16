@@ -1,0 +1,2000 @@
+{
+    "cards": [
+        {
+            "registration_number": "725071400026-6",
+            "created_date": "2025-07-14",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625062700066-8",
+            "iksi_own_using": [
+                {
+                    "date": "2024-02-26",
+                    "using_description": "Производство продуктов парфюмерно-косметической промышленности - зубных паст, с использованием остеогенного тройного нанокомпозита",
+                    "estimated_time": "240.000",
+                    "requisites": "Акт №1 от 17 апреля 2025 г."
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725111400063-4",
+            "created_date": "2025-11-14",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "АААА-Г18-618112790011-5",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2025-10-01",
+                    "registration_number": "054630",
+                    "special_conditions": null,
+                    "contract_number": "108-25",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "12.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ПСК \"КОЛОС\"",
+                        "name": "ПРОИЗВОДСТВЕННЫЙ СЕЛЬСКОХОЗЯЙСТВЕННЫЙ КООПЕРАТИВ \"КОЛОС\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1026602234120",
+                        "supervisor_name": "ГРИГОРИЙ",
+                        "supervisor_surname": "ШУБИН",
+                        "supervisor_patronymic": "ЮРЬЕВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Сельскохозяйственные производственные кооперативы"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725122400036-4",
+            "created_date": "2025-12-24",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625122200458-7",
+            "iksi_own_using": [
+                {
+                    "date": "2025-12-16",
+                    "using_description": "Назначение программы «Planeta Fengyun-З» -предоставление инструментов для предварительной обработки спутниковой информации, принятой с космических аппаратов серии Fengyun-3 на приёмные комплексы Х-диапазона, и передачи её на комплекс стандартной обработки.",
+                    "estimated_time": "300.000",
+                    "requisites": "Акт внедрения №9 от 16.12.2025 г."
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725102000024-7",
+            "created_date": "2025-10-20",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624120400092-8",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-12-11",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "160/Л/ПЛО",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "36.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ООО \"ИНЕРТЕХ\"",
+                        "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ИНЕРТЕХ\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1107847322681",
+                        "supervisor_name": "ЕВГЕНИЙ",
+                        "supervisor_surname": "БОХМАН",
+                        "supervisor_patronymic": "ДАВИДОВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725022600025-9",
+            "created_date": "2025-02-26",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625011201298-5",
+            "iksi_own_using": [
+                {
+                    "date": "2025-01-17",
+                    "using_description": "Результат интеллектуальной деятельности, программа для ЭВМ, использовалась в 2024 году в научной, инновационной и инжиниринговой деятельности Института физики им. Х.И. Амирханова – обособленного подразделения Дагестанского федерального исследовательского центра РАН",
+                    "estimated_time": "840.000",
+                    "requisites": "Акт использования РИД в научной, инновационной и инжиниринговой деятельности ДФИЦ РАН в 2024г. от 17.01.2025 г."
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725070900020-2",
+            "created_date": "2025-07-09",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625052600057-8",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2025-06-18",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "18/2025",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "12.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ООО \"ИТИС\"",
+                        "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ИНФОРМАЦИОННЫЕ ТЕХНОЛОГИИ И СЕРВИС\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1252300020103",
+                        "supervisor_name": "ВААГН",
+                        "supervisor_surname": "КАРАКЯН",
+                        "supervisor_patronymic": "ЭРНЕСТОВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725081200041-0",
+            "created_date": "2025-08-12",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624121600256-9",
+            "iksi_own_using": [
+                {
+                    "date": "2024-12-11",
+                    "using_description": "Результат интеллектуальной деятельности был внедрен в работу лаборатории эпигенетики ожирения и диабета ФГБНУ «МГНЦ» для молекулярно-генетического обследования пациента с подозрением на PIK3CA-ассоциированный спектр синдромов избыточного роста с малой представленностью альтернативного варианта (VAF) в биологическом материале.",
+                    "estimated_time": "60.000",
+                    "requisites": "№1-7/2024"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725072300001-1",
+            "created_date": "2025-07-23",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625060900071-6",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-11-21",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "01/24",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "11.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "СТРОИТЕЛЬНЫЕ ТЕХНОЛОГИИ",
+                        "name": "СТРОИТЕЛЬНЫЕ ТЕХНОЛОГИИ ООО",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1077746793651",
+                        "supervisor_name": "А",
+                        "supervisor_surname": "ГРАЧЕВ",
+                        "supervisor_patronymic": "Г",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725020600004-0",
+            "created_date": "2025-02-06",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624060500040-7",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-12-09",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "ЛД-БД-51-24",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "12.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ФОНД \"ЦМС \"КАДУЦЕЙ\"",
+                        "name": "ФОНД \"ЦЕНТР МЕЖДУНАРОДНОГО СОТРУДНИЧЕСТВА \"КАДУЦЕЙ\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1027807974743",
+                        "supervisor_name": "ПЁТР",
+                        "supervisor_surname": "ТУПИЦЫН",
+                        "supervisor_patronymic": "ВИКТОРОВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Фонды"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725102000023-0",
+            "created_date": "2025-10-20",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "622120900204-2",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-09-20",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "146/Л/ПЛО",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "60.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "",
+                        "name": "ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ \"САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ МОРСКОЙ ТЕХНИЧЕСКИЙ УНИВЕРСИТЕТ\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1027810221548",
+                        "supervisor_name": "ГЛЕБ",
+                        "supervisor_surname": "ТУРИЧИН",
+                        "supervisor_patronymic": "АНДРЕЕВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": "Министерство науки и высшего образования Российской Федерации",
+                        "okopf": "Федеральные государственные бюджетные учреждения"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725011000038-9",
+            "created_date": "2025-01-10",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624110100098-4",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-12-09",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "901-Д/2024",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "12.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": null,
+                        "name": null,
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "319774600415812",
+                        "supervisor_name": "АНДРЕЙ",
+                        "supervisor_surname": "КОЛЕСНИКОВ",
+                        "supervisor_patronymic": "АЛЕКСАНДРОВИЧ",
+                        "organization_type": "Индивидуальный предприниматель",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": null
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725030300047-9",
+            "created_date": "2025-03-03",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625030300096-8",
+            "iksi_own_using": [
+                {
+                    "date": "2024-02-01",
+                    "using_description": "Материалы базы данных используется в лекционном и практическом курсе по дисциплине «экономическая безопасность» для подготовки студентов специальности 38.05.01 «экономическая безопасность» 01.04.2024г.",
+                    "estimated_time": "120.000",
+                    "requisites": "Акт внедрения б/н от 01.02.2024"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725112600005-9",
+            "created_date": "2025-11-26",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625090100095-7",
+            "iksi_own_using": [
+                {
+                    "date": "2025-08-31",
+                    "using_description": "Для использования в прототипе программного комплекса управления роем автономных роботов-погрузчиков",
+                    "estimated_time": "60.000",
+                    "requisites": "приказ от 31.08.2025 №5-П"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725062700007-0",
+            "created_date": "2025-06-27",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624122600576-5",
+            "iksi_own_using": [
+                {
+                    "date": "2025-06-16",
+                    "using_description": "Географический «осциллограф» разработан для выявления пространственно-временных зависимостей по ИСЗ-снимкам.\nПрограмма предназначена для обработки наборов растровых файлов одинаковой размерности. \nИспользование в качестве исходных данных набора последовательных по времени создания ИСЗ-снимков малого разрешения позволил выделить долгопериодные волны и определить их параметры – длину и направление распространения и сопоставить фазу волны с пространством\n и временем.",
+                    "estimated_time": "36.000",
+                    "requisites": "Акт б-н от 16.06.2025г."
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725112700029-4",
+            "created_date": "2025-11-27",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625080600003-8",
+            "iksi_own_using": [
+                {
+                    "date": "2025-07-09",
+                    "using_description": "Рассчитывание пространственных скоростей звезд (A, D) и их погрешностей по данным астрометрии (RA DE, параллакс, собственные движения. лучевая скорость)",
+                    "estimated_time": "600.000",
+                    "requisites": "Акт №6/25"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725121500052-6",
+            "created_date": "2025-12-15",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "623121301095-7",
+            "iksi_own_using": [
+                {
+                    "date": "2025-11-24",
+                    "using_description": "Для научных исследований",
+                    "estimated_time": "36.000",
+                    "requisites": "Акт использования № И-2025-2"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725120400004-9",
+            "created_date": "2025-12-04",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624041601949-0",
+            "iksi_own_using": [
+                {
+                    "date": "2024-06-26",
+                    "using_description": "В период с 17.06.2024 по 17.06.2025 гг. использовалось изобретение \"Способ лечения аваскулярного некроза головки бедренной кости при 2 стадии аваскулярного некроза по ARCO\" в учебном процессе на кафедре травматологии и ортопедии.",
+                    "estimated_time": "12.000",
+                    "requisites": "справка о внедрении результатов научных исследований в учебный процесс"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725051400015-2",
+            "created_date": "2025-05-14",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624021200052-4",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-12-02",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "1/24",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "49.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "",
+                        "name": "ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ \"РОССИЙСКИЙ НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ МЕДИЦИНСКИЙ УНИВЕРСИТЕТ ИМЕНИ Н.И. ПИРОГОВА\" МИНИСТЕРСТВА ЗДРАВООХРАНЕНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1027739054420",
+                        "supervisor_name": "СЕРГЕЙ",
+                        "supervisor_surname": "ЛУКЬЯНОВ",
+                        "supervisor_patronymic": "АНАТОЛЬЕВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": "Министерство здравоохранения Российской Федерации",
+                        "okopf": "Федеральные государственные бюджетные учреждения"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725120500018-5",
+            "created_date": "2025-12-05",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625111100106-2",
+            "iksi_own_using": [
+                {
+                    "date": "2025-11-05",
+                    "using_description": "Автоматизация систем сбора и обработки информации, повышение надежности краткосрочного и среднесрочного прогноза сроков начала ледостава на озерных участках Цимлянского водохранилища.",
+                    "estimated_time": "60.000",
+                    "requisites": "Ак т№ПР/2025/10"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725040700002-3",
+            "created_date": "2025-04-07",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "АААА-Г19-619122590006-1",
+            "iksi_own_using": [
+                {
+                    "date": "2025-03-14",
+                    "using_description": "Скважинный термоэлектрический экранный модуль, представляющий собой теплоизолированную колонну с возможностью управления тепловыми потоками внутри скважины, был внедрен в производственный процесс с целью разработки проекта по разработке скважинного нагревательного модуля совместно с компаниями ООО «Металлинвест-Центр» и ООО ТПК «ЭЛЕРОН». Внедрение осуществлялось в период с 01.11.2019 г. по 01.03.2025 г. и включало следующие этапы:\n•\tРазработка методики проектирования скважинного термоэлектрического экранного модуля.\n•\tСоздание 3D-модели модуля для визуализации и анализа конструкции.\n•\tРасчёт технических характеристик и параметров модуля.\n•\tПодготовка чертежей и схем модуля.\n•\tОписание технических требований и параметров.\n•\tСогласование и утверждение документации.\nВ результате внедрения на предприятии были достигнуты следующие результаты:\nРазработана методика проектирования скважинного термоэлектрического экранного модуля.\nПодготовлена конструкторская документация.",
+                    "estimated_time": "0.000",
+                    "requisites": "Акт внедрения от 10 марта 2025 г."
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725043000001-4",
+            "created_date": "2025-04-30",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625022400021-4",
+            "iksi_own_using": [
+                {
+                    "date": "2024-11-12",
+                    "using_description": "Предоставление сервиса внешним заказчикам основанного на использовании разработанного программного обеспечения",
+                    "estimated_time": "60.000",
+                    "requisites": "Акт № 1 об использовании (внедрении) служебной программы для ЭВМ."
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725072500031-6",
+            "created_date": "2025-07-25",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625071400079-3",
+            "iksi_own_using": [
+                {
+                    "date": "2024-04-01",
+                    "using_description": "Использование в деятельности предприятия",
+                    "estimated_time": "300.000",
+                    "requisites": "Акт от 01.04.2024"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725092900005-1",
+            "created_date": "2025-09-29",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "622012700482-4",
+            "iksi_own_using": [
+                {
+                    "date": "2025-09-03",
+                    "using_description": "Агентское сопровождение договоров об оказании услуг при реализации на платформе платных программ дополнительного образования",
+                    "estimated_time": "24.000",
+                    "requisites": "Акт от 3 сентября 2025 года (на основании приказа 1-ИС/ПДО от 11 августа 2025 года)"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725052700041-5",
+            "created_date": "2025-05-27",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624121000205-3",
+            "iksi_own_using": [
+                {
+                    "date": "2024-11-25",
+                    "using_description": "Целью создания электронной базы данных явилась регистрация данных мужчин и женщин со злокачественными новообразованиями бронхов и легкого, состоящих на учете в онкологическом диспансере Томской области. База данных предназначена для систематизации персональных клинико-патологических данных при проведении исследований с целью расчета популяционной наблюдаемой, скорректированной выживаемости. Электронная база данных содержит следующую информацию: шифр пациента; анамнестические данные пациента, данные амбулаторной карты; дата постановки диагноза; дата подтверждения диагноза; возраст установления диагноза; дата снятия с учета; дата последнего контакта; статус (выехал, жив, умер от других заболеваний, умер от злокачественного новообразования, умер от осложнений, связанных с лечением); причина смерти по МКБ-10; дата рецидива; дата отдаленных метастазов и их локализация, характеристика опухоли стадия заболевания, классификация TNM, морфологический тип опухоли; проведение анализа EGFR; проведение анализа ALK или ROS-1; проведение анализа PD-L1; наличие мутации EGFR; наличие мутации ALK или ROS-1; наличие мутации PD-L1, информация о пациенте для расчета наблюдаемой и скорректированной выживаемости (число полных лет жизни; код статуса пациента и скорректированный код статуса), информация по ожидаемой выживаемости пациента.База данных оптимизирована для поиска необходимой информации по одному или совокупности полей входного формата, экспорту в необходимые приложения для статистической обработки информации.",
+                    "estimated_time": "840.000",
+                    "requisites": "Акт внедрения №26 от 25.11.2024"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725022600026-6",
+            "created_date": "2025-02-26",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625011000926-0",
+            "iksi_own_using": [
+                {
+                    "date": "2024-12-24",
+                    "using_description": "Результат интеллектуальной деятельности, программа для ЭВМ, использовалась в 2024 году в научной, инновационной и инжиниринговой деятельности Института физики им. Х.И. Амирханова – обособленного подразделения Дагестанского федерального исследовательского центра РАН",
+                    "estimated_time": "840.000",
+                    "requisites": "АКТ использования РИД в научной, инновационной и инжиниринговой деятельности в 2024 г. от 24.12.2024"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725091100002-1",
+            "created_date": "2025-09-11",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625070900111-8",
+            "iksi_own_using": [
+                {
+                    "date": "2025-06-19",
+                    "using_description": "После восстановления жидкого состояния плазмы in vitro проводят тест тромбодинамики. Определяют показатели теста, а именно: время задержки начала образования сгустка, среднюю скорость роста сгустка, размер фибринового сгустка, плотность сгустка и время появления спонтанных сгустков, при нахождении которых в пределах референсных значений, определяют не нарушенный коагуляционный потенциал лиофилизированной плазмы. Способ обеспечивает возможность информативного определения коагуляционного потенциала лиофилизированной плазмы in vitro за счет определения после восстановления жидкого состояния плазмы in vitro показателей теста тромбодинамика: времени задержки начала образования сгустка, средней скорости роста сгустка, размера фибринового сгустка, плотности сгустка и времени появления спонтанных сгустков, что может быть использовано в отделениях трансфузиологии и банках крови.",
+                    "estimated_time": "226.000",
+                    "requisites": "Акт внедрения результатов интеллектуальной деятельности «Способ определения коагуляционного потенциала лиофилизированной плазмы»"
+                }
+            ],
+            "iksi_external_using": [
+                {
+                    "date": "2025-06-19",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "62",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "226.000",
+                    "contract_type": null,
+                    "organization_state": {
+                        "short_name": "",
+                        "name": "ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ  НАУКИ \"КИРОВСКИЙ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЙ ИНСТИТУТ ГЕМАТОЛОГИИ И ПЕРЕЛИВАНИЯ КРОВИ ФЕДЕРАЛЬНОГО МЕДИКО-БИОЛОГИЧЕСКОГО АГЕНТСТВА\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1034316521051",
+                        "supervisor_name": "ИГОРЬ",
+                        "supervisor_surname": "ПАРАМОНОВ",
+                        "supervisor_patronymic": "ВЛАДИМИРОВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": "Федеральное медико-биологическое агентство",
+                        "okopf": "Федеральные государственные бюджетные учреждения"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725120500019-2",
+            "created_date": "2025-12-05",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625111100107-9",
+            "iksi_own_using": [
+                {
+                    "date": "2025-11-05",
+                    "using_description": "Автоматизация систем сбора и обработки информации, повышение надежности краткосрочного и среднесрочного прогноза сроков появления плавучего льда и начала ледостава на проточном участке Цимлянского водохранилища.",
+                    "estimated_time": "60.000",
+                    "requisites": "Акт №ПР/2025/11"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725111300015-4",
+            "created_date": "2025-11-13",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625100600885-5",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2025-10-20",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "ЛД-БД-53-25",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "12.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": null,
+                        "name": null,
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "320132600001492",
+                        "supervisor_name": "АНДРЕЙ",
+                        "supervisor_surname": "ПЛАНКИН",
+                        "supervisor_patronymic": "НИКОЛАЕВИЧ",
+                        "organization_type": "Индивидуальный предприниматель",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": null
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725031800019-8",
+            "created_date": "2025-03-18",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625031000409-6",
+            "iksi_own_using": [
+                {
+                    "date": "2024-06-27",
+                    "using_description": "учебный процесс",
+                    "estimated_time": "12.000",
+                    "requisites": "Акт об использовании"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725031200022-4",
+            "created_date": "2025-03-12",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625031000318-1",
+            "iksi_own_using": [
+                {
+                    "date": "2022-08-30",
+                    "using_description": "Материалы базы данных используется в лекционном курсе и на практических занятиях по дисциплине Б1ВФ16 «Социология города» для подготовки студентов специальности 39.03.01 «Социология» профиль «Социология организаций и управления» с 30 августа 2022 г.",
+                    "estimated_time": "120.000",
+                    "requisites": "Акт внедрения б/н от 30.08.2022"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725081200068-7",
+            "created_date": "2025-08-12",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625042200082-5",
+            "iksi_own_using": [
+                {
+                    "date": "2025-04-23",
+                    "using_description": "РИД использован в учебном процессе",
+                    "estimated_time": "10.000",
+                    "requisites": "Акт об использовании базы данных  от 23.04.2025"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725071700009-6",
+            "created_date": "2025-07-17",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625071600050-0",
+            "iksi_own_using": [
+                {
+                    "date": "2025-05-12",
+                    "using_description": "Изобретение будет использоваться при пробоподготовке библиотек, содержащих экзомные последовательности гена человека HLA-DPA1,  определение аллелей HLA-DPA1.",
+                    "estimated_time": "240.000",
+                    "requisites": "Акт о внедрении РИД и установлении срока полезного использования от 12.05. 2025 б/н"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725092300015-6",
+            "created_date": "2025-09-23",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625070900141-5",
+            "iksi_own_using": [
+                {
+                    "date": "2025-06-23",
+                    "using_description": "В период с 25..06 по 29.12.2025 гг. в БУЗОО \"КОБ им. В.П. Выходцева\" апробировано и внедрено использование в практической деятельности врачей-офтальмологов.",
+                    "estimated_time": "6.000",
+                    "requisites": "акт внедрения"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725100100023-5",
+            "created_date": "2025-10-01",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625090300074-0",
+            "iksi_own_using": [
+                {
+                    "date": "2025-09-01",
+                    "using_description": "Учебный процесс",
+                    "estimated_time": "12.000",
+                    "requisites": "Акт внедрения"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725031100097-3",
+            "created_date": "2025-03-11",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624122000083-4",
+            "iksi_own_using": [
+                {
+                    "date": "2025-03-07",
+                    "using_description": "Программа предназначена для создания базы метаданных об архивных документах Госфонда Росгидромета, содержащих результаты ледовых и иных гидрометеорологических наблюдений в полярных областях (книгах и таблицах наблюдений, альбомах ледовых карт и пр.). Обеспечивает занесение информации о документах в базу данных, редактирование записей и поиск информации.",
+                    "estimated_time": "36.000",
+                    "requisites": "Акт б-н от 07.03.2025г."
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725122500022-6",
+            "created_date": "2025-12-25",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625121900350-0",
+            "iksi_own_using": [
+                {
+                    "date": "2025-11-24",
+                    "using_description": "в федеральный информационно-аналитический центр ФГБУ «ИПГ",
+                    "estimated_time": "48.000",
+                    "requisites": "Акт практического применения (внедрения)  РИД №64"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725011000001-3",
+            "created_date": "2025-01-10",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624110700316-3",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-12-03",
+                    "registration_number": null,
+                    "special_conditions": "Покупатель не вправе предоставлять (передавать) третьим лицам права, полученные по настоящему договору",
+                    "contract_number": "12-03",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "840.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ООО \"БАШИНТЕХКОМ\"",
+                        "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"БАШКИРСКАЯ ИННОВАЦИОННАЯ ТЕХНОЛОГИЧЕСКАЯ КОМПАНИЯ\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1120280033059",
+                        "supervisor_name": "ЕЛЕНА",
+                        "supervisor_surname": "КУТДУСОВА",
+                        "supervisor_patronymic": "ХАНИФОВНА",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725100100011-2",
+            "created_date": "2025-10-01",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "АААА-Г16-616070850017-3",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-11-07",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "061-7д",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "60.000",
+                    "contract_type": null,
+                    "organization_state": {
+                        "short_name": "ООО \"ДЕВАЙС КОНСАЛТИНГ\"",
+                        "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ДЕВАЙС КОНСАЛТИНГ\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1027807571550",
+                        "supervisor_name": "МАКСИМ",
+                        "supervisor_surname": "КРАСНОВ",
+                        "supervisor_patronymic": "НИКОЛАЕВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725030600057-5",
+            "created_date": "2025-03-06",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "АААА-Г19-619121690077-3",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2022-09-08",
+                    "registration_number": null,
+                    "special_conditions": "Продажа через брокера (ООО \"Геодевайс\")",
+                    "contract_number": "7-09.22 спец.1",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "1111111.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ЯНЦ СО РАН",
+                        "name": "ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ НАУКИ ФЕДЕРАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ ЦЕНТР \"ЯКУТСКИЙ НАУЧНЫЙ ЦЕНТР СИБИРСКОГО ОТДЕЛЕНИЯ РОССИЙСКОЙ АКАДЕМИИ НАУК\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1021401060306",
+                        "supervisor_name": "МИХАИЛ",
+                        "supervisor_surname": "ЛЕБЕДЕВ",
+                        "supervisor_patronymic": "ПЕТРОВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": "Министерство науки и высшего образования Российской Федерации",
+                        "okopf": "Федеральные государственные бюджетные учреждения"
+                    }
+                },
+                {
+                    "date": "2022-03-23",
+                    "registration_number": null,
+                    "special_conditions": "Продажа через агента - ООО \"Геодевайс геофизика\"",
+                    "contract_number": "6.03-22 спец.1",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "1111111.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "АО \"ВНИИГ\"",
+                        "name": "АКЦИОНЕРНОЕ ОБЩЕСТВО \"ВНИИ ГАЛУРГИИ\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1027802765737",
+                        "supervisor_name": "ВЛАДИСЛАВ",
+                        "supervisor_surname": "РЕСИН",
+                        "supervisor_patronymic": "ВИТАЛЬЕВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Непубличные акционерные общества"
+                    }
+                },
+                {
+                    "date": "2021-06-30",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "5.06-21/5601007017",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "1111111.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "АК \"АЛРОСА\" (ПАО)",
+                        "name": "АКЦИОНЕРНАЯ КОМПАНИЯ \"АЛРОСА\" (ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО)",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1021400967092",
+                        "supervisor_name": null,
+                        "supervisor_surname": null,
+                        "supervisor_patronymic": null,
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": "Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно",
+                        "okopf": "Публичные акционерные общества"
+                    }
+                },
+                {
+                    "date": "2023-08-03",
+                    "registration_number": null,
+                    "special_conditions": "ООО \"ГеоДорПроект\" (ИНН  7813639371) в адрес ФКУ \"Москва-Бобруйск\" (филиал ГК Росавтодор)",
+                    "contract_number": "9.07-23",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "1111111.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ООО \"ГЕОДОРПРОЕКТ\"",
+                        "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ГЕОДОРПРОЕКТ\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1067203330105",
+                        "supervisor_name": "АНДРЕЙ",
+                        "supervisor_surname": "ПОЛИТОВ",
+                        "supervisor_patronymic": "АЛЕКСАНДРОВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                },
+                {
+                    "date": "2023-06-21",
+                    "registration_number": null,
+                    "special_conditions": "ООО \"А2-СП\" (ИНН 5029157765) в адрес НИУ МГСУ",
+                    "contract_number": "8.06-23",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "1111111.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ООО \"А2-СП\"",
+                        "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"А2-СТРОЙПРОЕКТ\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1115029011129",
+                        "supervisor_name": "АНДРЕЙ",
+                        "supervisor_surname": "ЛАПШИНОВ",
+                        "supervisor_patronymic": "ЕВГЕНЬЕВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                },
+                {
+                    "date": "2023-10-25",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "049/13489",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "1111111.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "АО \"ГСПИ\"",
+                        "name": "АКЦИОНЕРНОЕ ОБЩЕСТВО \"ГОСУДАРСТВЕННЫЙ СПЕЦИАЛИЗИРОВАННЫЙ ПРОЕКТНЫЙ ИНСТИТУТ\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1097746129447",
+                        "supervisor_name": "ИГОРЬ",
+                        "supervisor_surname": "БАЙКОВ",
+                        "supervisor_patronymic": "АЛЬБЕРТОВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": "Государственная корпорация по атомной энергии \"Росатом\"",
+                        "okopf": "Непубличные акционерные общества"
+                    }
+                },
+                {
+                    "date": "2024-06-11",
+                    "registration_number": null,
+                    "special_conditions": "Продажа на условиях сублицензионного договора в адрес ЗАО ИННЦ",
+                    "contract_number": "3.04-20",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "1111111.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ООО НПО \"ТЕРРАЗОНД\"",
+                        "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ НАУЧНО-ПРОИЗВОДСТВЕННОЕ ОБЪЕДИНЕНИЕ \"ТЕРРАЗОНД\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1197746563607",
+                        "supervisor_name": "ЕКАТЕРИНА",
+                        "supervisor_surname": "РОМАНОВА",
+                        "supervisor_patronymic": "ИВАНОВНА",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                },
+                {
+                    "date": "2024-08-27",
+                    "registration_number": null,
+                    "special_conditions": "Продажа на условиях сублицензионного договора в адрес ФГБУН ИВ РАН",
+                    "contract_number": "3.04-20",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "1111111.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ООО НПО \"ТЕРРАЗОНД\"",
+                        "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ НАУЧНО-ПРОИЗВОДСТВЕННОЕ ОБЪЕДИНЕНИЕ \"ТЕРРАЗОНД\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1197746563607",
+                        "supervisor_name": "ЕКАТЕРИНА",
+                        "supervisor_surname": "РОМАНОВА",
+                        "supervisor_patronymic": "ИВАНОВНА",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725102000020-9",
+            "created_date": "2025-10-20",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624101100160-6",
+            "iksi_own_using": [
+                {
+                    "date": "2024-05-20",
+                    "using_description": "Выполнение оперативного и ретроспективного анализа эпидемиологической ситуации по вирусным гепатитам в Российской Федерации.",
+                    "estimated_time": "60.000",
+                    "requisites": "Акт о внедрении результата интеллектуальной деятельности и установления срока полезного использования от 20.05.2024 г. б/н"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725111400083-2",
+            "created_date": "2025-11-14",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "АААА-Г18-618112790011-5",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2025-08-26",
+                    "registration_number": "053211",
+                    "special_conditions": null,
+                    "contract_number": "058-25",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "12.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "СХПК \"БИТИМСКИЙ\"",
+                        "name": "СЕЛЬСКОХОЗЯЙСТВЕННЫЙ ПРОИЗВОДСТВЕННЫЙ КООПЕРАТИВ \"БИТИМСКИЙ\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1036601471642",
+                        "supervisor_name": "МИХАИЛ",
+                        "supervisor_surname": "МАЛЬЦЕВ",
+                        "supervisor_patronymic": "ФЕДОРОВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Сельскохозяйственные производственные кооперативы"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725112800098-9",
+            "created_date": "2025-11-28",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "623122200154-0",
+            "iksi_own_using": [
+                {
+                    "date": "2025-01-13",
+                    "using_description": "Результат интеллектуальной деятельности предназначен для профилактики плевро-медиастинальных осложнений после эзофагэктомии с пластикой желудочным стеблем и анастомозом на шее.",
+                    "estimated_time": "240.000",
+                    "requisites": "Акт внедрения результата интеллектуальной деятельности"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725020700045-2",
+            "created_date": "2025-02-07",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "622121300070-6",
+            "iksi_own_using": [
+                {
+                    "date": "2024-05-29",
+                    "using_description": "Выходная продукция программы в оперативном режиме предоставляется в региональные УГМС Росгидромета.\nВ ходе эксплуатации программы в ФГБУ «ДВНИГМИ» подтверждено, что она обладает всеми заявленными возможностями и находится в рабочем состоянии.",
+                    "estimated_time": "480.000",
+                    "requisites": "АКТ № 2024-8 от 30.05.2024"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725013100033-7",
+            "created_date": "2025-01-31",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "АААА-Г18-618112790018-4",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-11-02",
+                    "registration_number": "047208",
+                    "special_conditions": null,
+                    "contract_number": "142-24",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "12.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "СПК \"САДОВОД\"",
+                        "name": "СЕЛЬСКОХОЗЯЙСТВЕННЫЙ ПРОИЗВОДСТВЕННЫЙ КООПЕРАТИВ \"САДОВОД\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1027201463354",
+                        "supervisor_name": "ТАТЬЯНА",
+                        "supervisor_surname": "КАЛУГИНА",
+                        "supervisor_patronymic": "АЛЕКСАНДРОВНА",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Сельскохозяйственные производственные кооперативы"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725112100021-4",
+            "created_date": "2025-11-21",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625112000046-9",
+            "iksi_own_using": [
+                {
+                    "date": "2025-09-01",
+                    "using_description": "УЧЕБНЫЙ ПРОЦЕСС",
+                    "estimated_time": "12.000",
+                    "requisites": "АКТ ВНЕДРЕНИЯ"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725022600010-5",
+            "created_date": "2025-02-26",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624112500233-9",
+            "iksi_own_using": [
+                {
+                    "date": "2025-01-15",
+                    "using_description": "Результат интеллектуальной деятельности, программа для ЭВМ, использовалась в 2024 году в научной, инновационной и инжиниринговой деятельности Института физики им. Х.И. Амирханова – обособленного подразделения Дагестанского федерального исследовательского центра РАН",
+                    "estimated_time": "840.000",
+                    "requisites": "АКТ использования РИД в научной, инновационной и инжиниринговой деятельности в 2024 г. от 15.01.2024"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725121800019-6",
+            "created_date": "2025-12-18",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624122400095-3",
+            "iksi_own_using": [
+                {
+                    "date": "2024-09-30",
+                    "using_description": "Внедрение в собственное программное обеспечение \"Интеллектуальная система автоматизации банкротства Rafinad.AI\"",
+                    "estimated_time": "120.000",
+                    "requisites": "Акт о приеме объекта нематериальных активов №1 от 30.09.2024 г."
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725062600014-9",
+            "created_date": "2025-06-26",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625043000080-0",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-11-25",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "1",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "999.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ООО \"ТРАНСПОРТ БУДУЩЕГО\"",
+                        "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ТРАНСПОРТ БУДУЩЕГО\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1213100015622",
+                        "supervisor_name": "ЮРИЙ",
+                        "supervisor_surname": "КОЗАРЕНКО",
+                        "supervisor_patronymic": "ВЛАДИМИРОВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": "Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно",
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725102100033-8",
+            "created_date": "2025-10-21",
+            "work_supervisor": {
+                "name": "Антон",
+                "surname": "Тумасов",
+                "patronymic": "Владимирович",
+                "position": "Директор ИТС",
+                "degree": "Кандидат технических наук",
+                "rank": "Доцент",
+                "wos_research_id": "A-5362-2014",
+                "scopus_author_id": "56578659000",
+                "rinc_id": "540686",
+                "url": "https://www.nntu.ru/phonebook/card/spravochnik/its/tumasov-anton-vladimirovich",
+                "orcid": "0000-0002-3766-4615",
+                "territory": "РОССИЯ"
+            },
+            "organization_supervisor": {
+                "name": "Андрей",
+                "surname": "Куркин",
+                "patronymic": "Александрович",
+                "position": "Проректор по научной работе",
+                "degree": null,
+                "rank": null,
+                "wos_research_id": null,
+                "scopus_author_id": null,
+                "rinc_id": null,
+                "url": null,
+                "orcid": null,
+                "territory": "РОССИЯ"
+            },
+            "rid": "АААА-Г19-619121790013-0",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2019-12-16",
+                    "registration_number": "РД0324974",
+                    "special_conditions": null,
+                    "contract_number": "№ 37.4-08/11-2019",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "120.000",
+                    "contract_type": "Отчуждение исключительного права",
+                    "organization_state": {
+                        "short_name": "ООО \"ОИЦ\"",
+                        "name": "Общество с ограниченной ответственностью \"Объединенный инженерный центр\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1075256005868",
+                        "supervisor_name": null,
+                        "supervisor_surname": null,
+                        "supervisor_patronymic": null,
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": "Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно",
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725062400017-2",
+            "created_date": "2025-06-24",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "623122800833-8",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-06-25",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "1-9.16/31458",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "6.000",
+                    "contract_type": null,
+                    "organization_state": {
+                        "short_name": "АО \"ВНИИНМ\"",
+                        "name": "АКЦИОНЕРНОЕ ОБЩЕСТВО \"ВЫСОКОТЕХНОЛОГИЧЕСКИЙ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЙ ИНСТИТУТ НЕОРГАНИЧЕСКИХ МАТЕРИАЛОВ ИМЕНИ АКАДЕМИКА А.А. БОЧВАРА\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "5087746697198",
+                        "supervisor_name": "ЛЕОНИД",
+                        "supervisor_surname": "КАРПЮК",
+                        "supervisor_patronymic": "АЛЕКСАНДРОВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": "Государственная корпорация по атомной энергии \"Росатом\"",
+                        "okopf": "Непубличные акционерные общества"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725051300012-2",
+            "created_date": "2025-05-13",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624051500099-3",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-12-02",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "1/24",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "49.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "",
+                        "name": "ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ \"РОССИЙСКИЙ НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ МЕДИЦИНСКИЙ УНИВЕРСИТЕТ ИМЕНИ Н.И. ПИРОГОВА\" МИНИСТЕРСТВА ЗДРАВООХРАНЕНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1027739054420",
+                        "supervisor_name": "СЕРГЕЙ",
+                        "supervisor_surname": "ЛУКЬЯНОВ",
+                        "supervisor_patronymic": "АНАТОЛЬЕВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": "Министерство здравоохранения Российской Федерации",
+                        "okopf": "Федеральные государственные бюджетные учреждения"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725042300001-4",
+            "created_date": "2025-04-23",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625042100097-0",
+            "iksi_own_using": [
+                {
+                    "date": "2024-12-09",
+                    "using_description": "в учебный процесс",
+                    "estimated_time": "12.000",
+                    "requisites": "Акт внедрения"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725040400009-5",
+            "created_date": "2025-04-04",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625040300085-1",
+            "iksi_own_using": [
+                {
+                    "date": "2024-05-15",
+                    "using_description": "учебный процесс",
+                    "estimated_time": "12.000",
+                    "requisites": "Акт внедрения"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725041600010-6",
+            "created_date": "2025-04-16",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624122700294-7",
+            "iksi_own_using": [
+                {
+                    "date": "2024-12-24",
+                    "using_description": "Программа осуществляет передачу, прием, хранение и мониторинг данных видеоизображений поведения лабораторных крыс, размещенных в сейсмоактивном регионе, способствует автоматизации анализа поведения по видеоизображению",
+                    "estimated_time": "240.000",
+                    "requisites": "2024 Акт внедрения ВиМоЛаК"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725040400017-0",
+            "created_date": "2025-04-04",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625031000162-0",
+            "iksi_own_using": [
+                {
+                    "date": "2025-04-02",
+                    "using_description": "В рамках реализации проекта осуществлено практическое применение разработанного результата интеллектуальной деятельности  — специализированной нейронной сети, интегрированной в веб страницу. Данный программный продукт предназначен для автоматизации расчетов в области машиностроительного проектирования, а именно для прогнозирования оптимальных типов посадок (с натягом, переходных или с зазором) и квалитетов (классов точности изготовления деталей) на основе анализа параметров сопрягаемых элементов: вала и отверстия.\n\nВ среднем точность использование модели является более 80% - для некоторых моделей доходит и до 90%.",
+                    "estimated_time": "365.000",
+                    "requisites": null
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725070300005-5",
+            "created_date": "2025-07-03",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624073000089-1",
+            "iksi_own_using": [
+                {
+                    "date": "2023-10-19",
+                    "using_description": "полезная модель используется при изготовлении материальной части РИД \"Механическое устройство батареи солнечной\"",
+                    "estimated_time": "46.000",
+                    "requisites": "2536"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725100300007-3",
+            "created_date": "2025-10-03",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "623101800025-2",
+            "iksi_own_using": [
+                {
+                    "date": "2024-02-16",
+                    "using_description": "Использование в составе блока внешних коммуникаций",
+                    "estimated_time": "60.000",
+                    "requisites": "Акт от 16.02.2024 приемочных испытаний и передачи в производство"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725092300028-6",
+            "created_date": "2025-09-23",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625032700368-6",
+            "iksi_own_using": [
+                {
+                    "date": "2025-06-10",
+                    "using_description": "В период с 28.02.2025 по 28.03.2025 гг. БУЗОО \"Городская клиническая стоматологическая поликлиника №1\" апробировано и внедрено использование в практической деятельности врачей-стоматологов ортопедов изобретение  Способ изготовления пустотелого протеза-обтуратора (№ 2833768 от 28.01.2025).",
+                    "estimated_time": "13.000",
+                    "requisites": "акт внедрения"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725021400036-0",
+            "created_date": "2025-02-14",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "АААА-Г18-618112790011-5",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-11-19",
+                    "registration_number": "047691",
+                    "special_conditions": null,
+                    "contract_number": "153-24",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "12.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ООО \"СХП \"ДАРЫ МАЛИНОВКИ\"",
+                        "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"СЕЛЬСКОХОЗЯЙСТВЕННОЕ ПРЕДПРИЯТИЕ \"ДАРЫ МАЛИНОВКИ\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1132411001128",
+                        "supervisor_name": "АННА",
+                        "supervisor_surname": "ГЕРМАН",
+                        "supervisor_patronymic": "ЕВГЕНЬЕВНА",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725112100019-1",
+            "created_date": "2025-11-21",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624110700092-6",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2024-12-09",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "17-19-2024",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "12.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "",
+                        "name": "ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ \"БАЛТИЙСКИЙ ФЕДЕРАЛЬНЫЙ УНИВЕРСИТЕТ ИМЕНИ ИММАНУИЛА КАНТА\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1023901002949",
+                        "supervisor_name": "АЛЕКСАНДР",
+                        "supervisor_surname": "ФЕДОРОВ",
+                        "supervisor_patronymic": "АЛЕКСАНДРОВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": "Министерство науки и высшего образования Российской Федерации",
+                        "okopf": "Федеральные государственные автономные учреждения"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725031100052-2",
+            "created_date": "2025-03-11",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624031300111-6",
+            "iksi_own_using": [
+                {
+                    "date": "2024-12-17",
+                    "using_description": "использование в учебном процессе",
+                    "estimated_time": "48.000",
+                    "requisites": "выписка из протокола 2 от 17.12.24"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725111400097-9",
+            "created_date": "2025-11-14",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "АААА-Г18-618112790011-5",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2025-07-14",
+                    "registration_number": "050769",
+                    "special_conditions": "нет",
+                    "contract_number": "040-25",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "12.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ООО \"ПЕРМСКИЙ ЭЛЕМЕНТ\"",
+                        "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ПЕРМСКИЙ ЭЛЕМЕНТ\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1135904015939",
+                        "supervisor_name": "ЕВГЕНИЙ",
+                        "supervisor_surname": "БУДАЛИН",
+                        "supervisor_patronymic": "ПЕТРОВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725060600012-1",
+            "created_date": "2025-06-06",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624082100036-6",
+            "iksi_own_using": [
+                {
+                    "date": "2024-08-22",
+                    "using_description": "РИД использован в учебном процессе",
+                    "estimated_time": "10.000",
+                    "requisites": "Акт об использовании программы для ЭВМ от 27.08.2024 г."
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725070900030-1",
+            "created_date": "2025-07-09",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625061700086-9",
+            "iksi_own_using": [
+                {
+                    "date": "2024-11-20",
+                    "using_description": "учебный процесс",
+                    "estimated_time": "12.000",
+                    "requisites": "Акт внедрения"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725052700007-1",
+            "created_date": "2025-05-27",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "623061300066-7",
+            "iksi_own_using": [
+                {
+                    "date": "2023-09-22",
+                    "using_description": "База данных использована в учебный процесс на кафедру патологической анатомии",
+                    "estimated_time": "2.000",
+                    "requisites": "справка о внедрении результатов научных исследований в учебный процесс"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725102100009-3",
+            "created_date": "2025-10-21",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625012104686-5",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2025-09-11",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "171/Л/ПЛО",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "600.000",
+                    "contract_type": "Исключительная лицензия",
+                    "organization_state": {
+                        "short_name": "ООО \"ДАХМИРА-С\"",
+                        "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ДАХМИРА-С\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1156733005197",
+                        "supervisor_name": "НИНА",
+                        "supervisor_surname": "ПАВЛОВЕЦ",
+                        "supervisor_patronymic": "НИКОЛАЕВНА",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725031200047-7",
+            "created_date": "2025-03-12",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625031000310-5",
+            "iksi_own_using": [
+                {
+                    "date": "2024-04-01",
+                    "using_description": "Материалы базы данных используется в лекционном и практическом курсе по дисциплине «кадровая безопасность» для подготовки студентов специальности 38.05.01 «экономическая безопасность» 01.04.2024г.",
+                    "estimated_time": "120.000",
+                    "requisites": "Акт внедрения б/н от 10.04.2024"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725122500016-5",
+            "created_date": "2025-12-25",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "621042000007-4",
+            "iksi_own_using": [
+                {
+                    "date": "2021-02-26",
+                    "using_description": "Программа «HTA» используется компанией в собственных целях для анализа перемещений и ориентации головы человека, а также для разработки, тестирования и отладки решений в области компьютерного зрения и человеко-машинного взаимодействия.",
+                    "estimated_time": "60.000",
+                    "requisites": "Акт о приеме объекта нематериальных активов №4"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725120500034-5",
+            "created_date": "2025-12-05",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625111100296-0",
+            "iksi_own_using": [
+                {
+                    "date": "2025-11-21",
+                    "using_description": "Назначение программы - автоматическое построение тайловых покрытий (разбитых на квадратные фрагменты растров) коэффициентов отражения в спектральных полосах пропускания каналов одного прибора по их зависимостям от углов наблюдения и освещения (Bidirectional Reflectance Distribution Function, BRDF) в геометрию сканирования и углы наблюдения и освещения другого прибора в другой момент времени той же даты для сравнительного анализа этих величин двух приборов. Это позволяет смоделировать вид поверхности с любого ракурса при любой высоте и азимуте Солнца, что необходимо для кросс-калибровки радиометра КМСС-2 КА «Метеор-М» №2-4 по радиометру VIIRS КА Suomi NPP. \nВ процессе работы программы с указанной периодичностью осуществляется автоматический поиск новых файлов исходных данных BRDF и покрытия углов наблюдения и освещения целевого прибора в хранилищах тайловых покрытий. Далее программа рассчитывает модельные значения коэффициентов отражения в углах целевого прибора, и поддерживает в выходном каталоге очередь результирующих файлов указанной длительности.",
+                    "estimated_time": "300.000",
+                    "requisites": "Акт внедрения №2025689517 от 21.11.2025 г."
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725062600006-4",
+            "created_date": "2025-06-26",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "АААА-Г18-618112790013-9",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2025-05-29",
+                    "registration_number": "050026",
+                    "special_conditions": "нет",
+                    "contract_number": "026-25",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "12.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "АО \"КСС\"",
+                        "name": "АКЦИОНЕРНОЕ ОБЩЕСТВО \"КАНСКАЯ СОРТОИСПЫТАТЕЛЬНАЯ СТАНЦИЯ\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1062450011304",
+                        "supervisor_name": "ЕВГЕНИЙ",
+                        "supervisor_surname": "ЛЕВКОВСКИЙ",
+                        "supervisor_patronymic": "НИКОЛАЕВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Непубличные акционерные общества"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725101700007-6",
+            "created_date": "2025-10-17",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "623111300050-8",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2025-09-29",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "7/Р",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "1.000",
+                    "contract_type": null,
+                    "organization_state": {
+                        "short_name": "БУЗОО \"ГКБ № 1 ИМ. КАБАНОВА А.Н.\"",
+                        "name": "БЮДЖЕТНОЕ УЧРЕЖДЕНИЕ ЗДРАВООХРАНЕНИЯ ОМСКОЙ ОБЛАСТИ \"ГОРОДСКАЯ КЛИНИЧЕСКАЯ БОЛЬНИЦА № 1 ИМЕНИ КАБАНОВА А.Н.\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1025501382060",
+                        "supervisor_name": "ВЯЧЕСЛАВ",
+                        "supervisor_surname": "ЕГОРЕНКО",
+                        "supervisor_patronymic": "ВИКТОРОВИЧ",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Государственные бюджетные учреждения субъектов Российской Федерации"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725031100101-7",
+            "created_date": "2025-03-11",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625031100530-6",
+            "iksi_own_using": [
+                {
+                    "date": "2024-06-26",
+                    "using_description": "Материалы базы данных используется в лекционном и лабораторном курсе по дисциплине «Базы данных» для подготовки студентов 2 курса специальности 09.03.01 «Информатика и вычислительная техника».",
+                    "estimated_time": "120.000",
+                    "requisites": "Акт внедрения б/н от 26.06.2024"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725030400006-5",
+            "created_date": "2025-03-04",
+            "work_supervisor": {
+                "name": "Дмитрий",
+                "surname": "Гольдштейн",
+                "patronymic": "Вадимович",
+                "position": "заведующий лабораторией",
+                "degree": "Доктор биологических наук",
+                "rank": "Профессор",
+                "wos_research_id": "AAK-8313-2021",
+                "scopus_author_id": "54947373500",
+                "rinc_id": "181792",
+                "url": null,
+                "orcid": null,
+                "territory": "РОССИЯ"
+            },
+            "organization_supervisor": {
+                "name": "Сергей",
+                "surname": "Куцев",
+                "patronymic": "Иванович",
+                "position": "Директор",
+                "degree": null,
+                "rank": null,
+                "wos_research_id": null,
+                "scopus_author_id": null,
+                "rinc_id": null,
+                "url": null,
+                "orcid": null,
+                "territory": "РОССИЯ"
+            },
+            "rid": "АААА-Г20-620032690024-2",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2021-09-15",
+                    "registration_number": "РД0376630",
+                    "special_conditions": null,
+                    "contract_number": "3",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "240.000",
+                    "contract_type": "Отчуждение исключительного права",
+                    "organization_state": {
+                        "short_name": "ОАО \"ИСКЧ\"",
+                        "name": "Открытое акционерное общество \"Институт Стволовых Клеток Человека\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1037789001315",
+                        "supervisor_name": null,
+                        "supervisor_surname": null,
+                        "supervisor_patronymic": null,
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": "Министерство здравоохранения Российской Федерации",
+                        "okopf": "Публичные акционерные общества"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725030400004-1",
+            "created_date": "2025-03-04",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624070900096-9",
+            "iksi_own_using": [
+                {
+                    "date": "2025-02-27",
+                    "using_description": "используется для прогноза и расчета дрейфа айсбергов",
+                    "estimated_time": "36.000",
+                    "requisites": "Акт б-н от 27.02.2025г."
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725121500032-8",
+            "created_date": "2025-12-15",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "623111400068-2",
+            "iksi_own_using": [
+                {
+                    "date": "2025-11-25",
+                    "using_description": "Для научных исследований",
+                    "estimated_time": "36.000",
+                    "requisites": "Акт использования № И-2025-3"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725011000026-6",
+            "created_date": "2025-01-10",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624101100273-3",
+            "iksi_own_using": [
+                {
+                    "date": "2024-12-16",
+                    "using_description": "Используется в системе обработки экспериментальных данных установки ФОДС на Ускорительном комплексе У-70",
+                    "estimated_time": "120.000",
+                    "requisites": "Приказ НИЦ \"Курчатовский институт\" - ИФВЭ № 341 от 16.12.2024"
+                }
+            ],
+            "iksi_external_using": []
+        },
+        {
+            "registration_number": "725062000001-5",
+            "created_date": "2025-06-20",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "625031300876-3",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2025-05-23",
+                    "registration_number": null,
+                    "special_conditions": null,
+                    "contract_number": "250529135148",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "60.000",
+                    "contract_type": "Простая (неисключительная) лицензия",
+                    "organization_state": {
+                        "short_name": "ООО \"МЭДЖИК ПРОДАКШН\"",
+                        "name": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"МЭДЖИК ПРОДАКШН\"",
+                        "original_name": null,
+                        "original_short_name": null,
+                        "ogrn": "1187746840203",
+                        "supervisor_name": "ЮЛИЯ",
+                        "supervisor_surname": "НОРИНА",
+                        "supervisor_patronymic": "СЕРГЕЕВНА",
+                        "organization_type": "Организация",
+                        "territory": null,
+                        "okogu": null,
+                        "okopf": "Общества с ограниченной ответственностью"
+                    }
+                }
+            ]
+        },
+        {
+            "registration_number": "725062000002-2",
+            "created_date": "2025-06-20",
+            "work_supervisor": null,
+            "organization_supervisor": null,
+            "rid": "624121800139-3",
+            "iksi_own_using": [],
+            "iksi_external_using": [
+                {
+                    "date": "2025-04-01",
+                    "registration_number": "",
+                    "special_conditions": "Выполнение работ по государственному контракту",
+                    "contract_number": "1-9.16/16207",
+                    "territory": [
+                        "РОССИЯ"
+                    ],
+                    "estimated_time": "6.000",
+                    "contract_type": null,
+                    "organization_state": {

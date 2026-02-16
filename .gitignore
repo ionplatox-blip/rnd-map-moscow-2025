@@ -1,0 +1,14 @@
+node_modules
+app/node_modules
+app/dist
+__pycache__
+*.pyc
+.DS_Store
+.env
+.idea
+.vscode
+open_data_*.json
+app/public/data/moscow_rd_centers.json
+public/data/moscow_rd_centers.json
+*.xlsx
+

@@ -5,9 +5,10 @@ import './ProjectModal.css';
 interface ProjectModalProps {
     project: CenterDetail['projects'][0];
     onClose: () => void;
+    onViewCenter?: () => void;
 }
 
-export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, onViewCenter }) => {
     if (!project) return null;
 
     const formatMoneyMln = (amount?: number) => {
@@ -41,6 +42,29 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                         <span className="date-label">Сроки реализации:</span>
                         <span className="date-value">{project.stage_start_date} — {project.stage_end_date}</span>
                     </div>
+                </div>
+
+                <div className="modal-actions" style={{ padding: '0 2rem', marginBottom: '1rem' }}>
+                    <button
+                        className="btn-view-center"
+                        onClick={onViewCenter}
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            background: 'rgba(59, 130, 246, 0.15)',
+                            border: '1px solid rgba(59, 130, 246, 0.3)',
+                            color: '#60a5fa',
+                            padding: '8px 16px',
+                            borderRadius: '8px',
+                            fontSize: '0.85rem',
+                            fontWeight: 500,
+                            cursor: 'pointer',
+                            transition: 'all 0.2s'
+                        }}
+                    >
+                        🏛 Перейти к организации
+                    </button>
                 </div>
 
                 <div className="modal-body">

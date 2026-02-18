@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import type { MapCenter } from '../types';
+import type { MapCenter, MatchReason } from '../types';
+
 import './MapView.css';
 
 // Fix for default marker icons in React-Leaflet
@@ -19,7 +20,10 @@ interface MapViewProps {
     onCenterClick: (center: MapCenter) => void;
     highlightedCenters?: string[]; // OGRNs to highlight
     onMapClick?: () => void;
+    isSearchActive?: boolean;
+    matchReasons?: Record<string, MatchReason>;
 }
+
 
 // Component to fly to selected center
 function MapController({ center }: { center: MapCenter | null }) {
@@ -51,8 +55,11 @@ export const MapView: React.FC<MapViewProps> = ({
     selectedCenter,
     onCenterClick,
     highlightedCenters = [],
-    onMapClick
+    onMapClick,
+    isSearchActive = false,
+    matchReasons = {}
 }) => {
+
     const defaultCenter: [number, number] = [55.7558, 37.6173]; // Moscow center
     const defaultZoom = 11;
 
@@ -61,8 +68,8 @@ export const MapView: React.FC<MapViewProps> = ({
         const funding = center.total_funding || 0; // in thousands
         let color = '#3b82f6'; // blue (Small < 100M)
 
-        if (isHighlighted) {
-            color = '#8b5cf6'; // purple for highlighted
+        if (isSearchActive || isHighlighted) {
+            color = '#8b5cf6'; // purple for searched/highlighted
         } else if (funding > 1000000) { // > 1 Billion (1,000,000 thousands)
             color = '#ef4444'; // red for large
         } else if (funding > 100000) { // > 100 Million (100,000 thousands)
@@ -70,10 +77,8 @@ export const MapView: React.FC<MapViewProps> = ({
         }
 
         // Logarithmic size based on funding (clamped)
-        // Base size 8, add log scale.
-        // log10(100,000) = 5. log10(1,000,000) = 6.
         const sizeValue = funding > 0 ? Math.log10(funding) : 0;
-        const size = isHighlighted ? 16 : Math.max(8, Math.min(6 + sizeValue * 1.5, 20));
+        const size = isHighlighted || isSearchActive ? 16 : Math.max(8, Math.min(6 + sizeValue * 1.5, 20));
 
         return L.divIcon({
             className: 'custom-marker',
@@ -84,7 +89,7 @@ export const MapView: React.FC<MapViewProps> = ({
         border: 2px solid white;
         border-radius: 50%;
         box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        ${isHighlighted ? 'animation: pulse 1.5s ease-in-out infinite;' : ''}
+        ${(isHighlighted || isSearchActive) ? 'animation: pulse 1.5s ease-in-out infinite;' : ''}
       "></div>`,
             iconSize: [size, size],
             iconAnchor: [size / 2, size / 2],
@@ -110,7 +115,6 @@ export const MapView: React.FC<MapViewProps> = ({
                     if (!center.lat || !center.lon) return null;
 
                     const isHighlighted = highlightedCenters.includes(center.ogrn);
-
                     const markerIcon = createMarkerIcon(center, isHighlighted);
 
                     // We use a custom event handler that stops propagation to prevent map click
@@ -136,6 +140,23 @@ export const MapView: React.FC<MapViewProps> = ({
                                             {center.name}
                                         </p>
                                     )}
+                                    {matchReasons[center.ogrn] && (matchReasons[center.ogrn].type === 'project' || matchReasons[center.ogrn].type === 'rid') && (
+                                        <div className="match-count-badge" style={{
+                                            background: 'rgba(139, 92, 246, 0.1)',
+                                            color: '#8b5cf6',
+                                            padding: '4px 8px',
+                                            borderRadius: '4px',
+                                            fontSize: '0.8rem',
+                                            fontWeight: 600,
+                                            marginBottom: '8px',
+                                            border: '1px solid rgba(139, 92, 246, 0.2)'
+                                        }}>
+                                            {matchReasons[center.ogrn].type === 'project' ? '🚀 ' : '📜 '}
+                                            Найдено {matchReasons[center.ogrn].matchCount} релевантных {matchReasons[center.ogrn].type === 'project' ? 'проектов' : 'РИД'}
+
+                                        </div>
+                                    )}
+
                                     <div className="popup-stats">
                                         <div className="stat">
                                             <span className="stat-value">{center.rid_count}</span>

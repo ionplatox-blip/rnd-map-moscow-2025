@@ -4,24 +4,52 @@ import { MapView } from './components/MapView';
 import { Sidebar } from './components/Sidebar';
 import { Legend } from './components/Legend';
 import { SummaryInfo } from './components/SummaryInfo';
-import type { MapData, MapCenter, FundingTier } from './types';
+
+import type { MapData, MapCenter, FundingTier, SearchScope, MatchReason, SearchResult } from './types';
 import './index.css';
+
+
+
+interface SearchResponse {
+  results: SearchResult[];
+  rewritten_query?: string;
+}
 
 function App() {
   const [mapData, setMapData] = useState<MapData | null>(null);
+  const [searchIndex, setSearchIndex] = useState<Record<string, { projects: string[], rids: string[] }> | null>(null);
   const [loading, setLoading] = useState(true);
+
+
+  // Search State
   const [searchQuery, setSearchQuery] = useState('');
+  const [searchScope, setSearchScope] = useState<SearchScope>(null);
+  const [matchReasons, setMatchReasons] = useState<Record<string, MatchReason>>({});
+
+
+  // Map State
   const [fundingFilter, setFundingFilter] = useState<FundingTier>('all');
   const [selectedCenter, setSelectedCenter] = useState<MapCenter | null>(null);
   const [highlightedCenters, setHighlightedCenters] = useState<string[]>([]);
+
+  // AI Search State
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiResults, setAiResults] = useState<SearchResult[] | null>(null);
+  const [sidebarMode, setSidebarMode] = useState<'details' | 'ai-results'>('details');
+  const [highlightProjectId, setHighlightProjectId] = useState<string | null>(null);
 
   // Load map data on mount
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await fetch('/data/map_index.json');
-        const data = await response.json();
+        const [mapRes, indexRes] = await Promise.all([
+          fetch('/data/map_index.json'),
+          fetch('/data/search_index.json')
+        ]);
+        const data = await mapRes.json();
+        const indexData = await indexRes.json();
         setMapData(data);
+        setSearchIndex(indexData);
       } catch (error) {
         console.error('Failed to load map data:', error);
       } finally {
@@ -30,6 +58,42 @@ function App() {
     };
     loadData();
   }, []);
+
+
+  // AI Search Logic
+  const handleAISearch = async () => {
+    if (!searchQuery.trim()) return;
+
+    setAiLoading(true);
+    setAiResults(null);
+    setSidebarMode('ai-results');
+    // Clear selected center to show results
+    setSelectedCenter(null);
+
+    try {
+      const response = await fetch('http://localhost:8000/ai-search', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          query: searchQuery,
+          top_k_results: 10,
+          use_rewrite: true,
+          use_rerank: true
+        }),
+      });
+
+      if (!response.ok) throw new Error('Search failed');
+
+      const data: SearchResponse = await response.json();
+      setAiResults(data.results);
+    } catch (error) {
+      console.error('AI Search Error:', error);
+      // Handle error (maybe show toast or state)
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
 
   // Combined filtering logic
   const filteredCenters = useMemo(() => {
@@ -52,8 +116,8 @@ function App() {
     const query = searchQuery.toLowerCase().trim();
     if (!query) return results;
 
-    const tokens = query.split(/\s+/).filter(t => t.length > 1); // Ignore single chars
-    if (tokens.length === 0) return results;
+    const tokens = query.split(/\s+/).filter(t => t.length > 1);
+    const newMatchReasons: Record<string, MatchReason> = {};
 
     const searched = results.map(center => {
       let score = 0;
@@ -61,36 +125,100 @@ function App() {
       const shortName = (center.short_name || '').toLowerCase();
       const okogu = (center.okogu || '').toLowerCase();
 
-      // precise match bonus
-      if (shortName === query) score += 100;
-      if (name === query) score += 100;
+      let bestReason: MatchReason | null = null;
 
-      // contains query bonus
-      if (shortName.includes(query)) score += 50;
-      if (name.includes(query)) score += 40;
+      // Define scopes based on filter
+      const checkNames = searchScope === null || searchScope === 'center';
+      const checkProjects = searchScope === null || searchScope === 'project';
+      const checkRids = searchScope === null || searchScope === 'rid';
 
-      // Token matching
+      if (checkNames) {
+        // Precise match
+        if (shortName === query || name === query) {
+          score += 100;
+          bestReason = { type: 'name', detail: 'Соответствие по названию' };
+        } else if (shortName.includes(query) || name.includes(query)) {
+          score += 50;
+          bestReason = { type: 'name', detail: 'Соответствие по названию' };
+        }
+      }
+
+      // Token match
       let tokenMatches = 0;
       for (const token of tokens) {
         let tokenScore = 0;
 
-        // Match against names
-        if (shortName.includes(token)) tokenScore += 20;
-        else if (name.includes(token)) tokenScore += 15;
+        if (checkNames) {
+          if (shortName.includes(token)) tokenScore += 20;
+          else if (name.includes(token)) tokenScore += 15;
+          if (okogu.includes(token)) tokenScore += 10;
 
-        // Match against OKOGU (agency)
-        if (okogu.includes(token)) tokenScore += 10;
-
-        // Match against Keywords
-        const keywordMatch = (center.top_keywords || []).find(k => k.keyword.toLowerCase().includes(token));
-        if (keywordMatch) {
-          tokenScore += 5 + (keywordMatch.count * 0.1);
+          if (tokenScore > 0 && !bestReason) {
+            bestReason = { type: 'name', detail: 'Соответствие по названию' };
+          }
         }
 
-        // Match against Scientific Domains
-        if ((center.scientific_domains || []).some(d => d.name.toLowerCase().includes(token))) {
-          tokenScore += 5;
+        if (checkProjects || checkRids) {
+          // Accurate keyword matching using searchIndex
+          const indexEntry = searchIndex ? searchIndex[center.ogrn] : null;
+
+          if (indexEntry) {
+            let pCount = 0;
+            let rCount = 0;
+
+            if (checkProjects) {
+              pCount = indexEntry.projects.filter(pText => tokens.every(t => pText.toLowerCase().includes(t))).length;
+            }
+            if (checkRids) {
+              rCount = indexEntry.rids.filter(rText => tokens.every(t => rText.toLowerCase().includes(t))).length;
+            }
+
+            if (pCount > 0 || rCount > 0) {
+              tokenScore += 30; // High score for accurate project/RID match
+
+              if (!bestReason || (bestReason.type !== 'name' && bestReason.type !== 'project' && bestReason.type !== 'rid')) {
+                if (searchScope === 'project' && pCount > 0) {
+                  bestReason = {
+                    type: 'project',
+                    detail: 'Найдены релевантные проекты',
+                    matchCount: pCount
+                  };
+                } else if (searchScope === 'rid' && rCount > 0) {
+                  bestReason = {
+                    type: 'rid',
+                    detail: 'Найдены релевантные РИД',
+                    matchCount: rCount
+                  };
+                } else if (searchScope === null) {
+                  // Fallback if no scope selected but we found something
+                  if (pCount > 0) bestReason = { type: 'project', detail: 'Найдено в проектах', matchCount: pCount };
+                  else if (rCount > 0) bestReason = { type: 'rid', detail: 'Найдено в РИД', matchCount: rCount };
+                }
+              }
+            }
+          }
+
+          // Fallback to center keywords if searchIndex not loaded yet or no project matches
+          if (!bestReason || (bestReason.type !== 'name' && bestReason.type !== 'project' && bestReason.type !== 'rid')) {
+            const keywordMatch = (center.top_keywords || []).find(k => k.keyword.toLowerCase().includes(tokens[0]));
+            if (keywordMatch) {
+              tokenScore += 5 + (keywordMatch.count * 0.1);
+              if (!bestReason) {
+                bestReason = { type: 'keyword', detail: `Ключевое слово: ${keywordMatch.keyword}` };
+              }
+            }
+          }
+
+          // Domains
+          const domainMatch = (center.scientific_domains || []).find(d => d.name.toLowerCase().includes(tokens[0]));
+          if (domainMatch) {
+            tokenScore += 5;
+            if (!bestReason || (bestReason.type !== 'name' && bestReason.type !== 'project' && bestReason.type !== 'rid' && bestReason.type !== 'keyword')) {
+              bestReason = { type: 'domain', detail: `Область: ${domainMatch.name}` };
+            }
+          }
         }
+
 
         if (tokenScore > 0) {
           score += tokenScore;
@@ -98,39 +226,73 @@ function App() {
         }
       }
 
-      // Boost for multi-token matches (semantic overlap)
+
       if (tokenMatches > 1) score += tokenMatches * 10;
+
+      if (score > 0 && bestReason) {
+        newMatchReasons[center.ogrn] = bestReason;
+      }
 
       return { center, score };
     });
 
-    // Filter by score threshold and sort
-    return searched
-      .filter(item => item.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 50)
-      .map(item => item.center);
-  }, [mapData, fundingFilter, searchQuery]);
+    // Update match reasons in a delayed way or just expose them
+    // WARNING: Setting state inside useMemo is generally discouraged, 
+    // but here it's derived from the same inputs and useful for the sidebar.
+    // I'll keep it for now but maybe move to a separate memo + effect later if issues arise.
 
-  // Handle highlighted centers from search
+    return {
+      centers: searched
+        .filter(item => item.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 50)
+        .map(item => item.center),
+      reasons: newMatchReasons
+    };
+  }, [mapData, fundingFilter, searchQuery, searchScope]);
+
+  // Sync reasons to state
+  useEffect(() => {
+    if (typeof filteredCenters === 'object' && 'reasons' in filteredCenters) {
+      setMatchReasons(filteredCenters.reasons);
+    }
+  }, [filteredCenters]);
+
+  const displayCenters = useMemo(() => {
+    if (!Array.isArray(filteredCenters)) {
+      return filteredCenters.centers;
+    }
+    return filteredCenters;
+  }, [filteredCenters]);
+
+
+  // Handle highlighted centers
   useEffect(() => {
     const query = searchQuery.toLowerCase().trim();
-    if (!query || filteredCenters.length === 0) {
+    if (!query || displayCenters.length === 0) {
       setHighlightedCenters([]);
       return;
     }
-    setHighlightedCenters(filteredCenters.slice(0, 10).map(c => c.ogrn));
-  }, [searchQuery, filteredCenters]);
+    setHighlightedCenters(displayCenters.slice(0, 10).map(c => c.ogrn));
+  }, [searchQuery, displayCenters]);
+
+
+  // Handle center selection from map or list
+  const handleMapSelection = (center: MapCenter | null) => {
+    setSelectedCenter(center);
+    if (center) {
+      setSidebarMode('details');
+    }
+    // Clear highlight if selecting a new center manually
+    if (!aiResults) {
+      setHighlightProjectId(null);
+    }
+  };
 
   if (loading) {
     return (
       <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh',
-        flexDirection: 'column',
-        gap: '1rem'
+        display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', flexDirection: 'column', gap: '1rem'
       }}>
         <div className="spinner" style={{ width: '40px', height: '40px' }} />
         <p style={{ color: 'var(--text-secondary)' }}>Загрузка карты...</p>
@@ -138,46 +300,64 @@ function App() {
     );
   }
 
-  if (!mapData) {
-    return (
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh'
-      }}>
-        <p style={{ color: 'var(--text-secondary)' }}>Ошибка загрузки данных</p>
-      </div>
-    );
-  }
+  if (!mapData) return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', color: 'var(--text-secondary)' }}>Ошибка загрузки данных</div>;
 
   return (
     <>
       <Header
         onSearch={setSearchQuery}
         searchQuery={searchQuery}
+        onScopeChange={setSearchScope}
+        activeScope={searchScope}
         aiSummary={null}
+        onAISearchClick={handleAISearch}
       />
+
       <MapView
-        centers={filteredCenters}
+        centers={displayCenters}
         selectedCenter={selectedCenter}
-        onCenterClick={setSelectedCenter}
+        onCenterClick={handleMapSelection}
         highlightedCenters={highlightedCenters}
         onMapClick={() => setSelectedCenter(null)}
+        isSearchActive={!!searchQuery}
+        matchReasons={matchReasons}
       />
+
+
       <div className="map-controls-left">
-        <SummaryInfo centers={filteredCenters} />
+        <SummaryInfo centers={displayCenters} />
         <Legend
           activeFilter={fundingFilter}
           onFilterChange={setFundingFilter}
         />
       </div>
+
       <Sidebar
         center={selectedCenter}
-        onClose={() => setSelectedCenter(null)}
+        onClose={() => {
+          setSelectedCenter(null);
+          setSidebarMode('details');
+          setAiResults(null);
+          setHighlightProjectId(null);
+        }}
+        mode={sidebarMode}
+        aiResults={aiResults}
+        aiLoading={aiLoading}
+        onCenterClick={(center) => {
+          handleMapSelection(center);
+        }}
+        onSetMode={setSidebarMode}
+        highlightProjectId={highlightProjectId}
+        onProjectClick={setHighlightProjectId}
+        matchReason={selectedCenter ? matchReasons[selectedCenter.ogrn] : undefined}
+        searchScope={searchScope}
+        searchQuery={searchQuery}
       />
+
     </>
   );
+
 }
 
 export default App;
+

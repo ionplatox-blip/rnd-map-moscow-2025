@@ -1,37 +1,39 @@
 # R&D Map of Moscow (R&D Карта Москвы)
 
 ## Project Overview
-Interactive map of Research & Development centers in Moscow, visualizing data from EGISU NIOKTR for 2025. The application helps users find organizations based on their competencies, funding, and research projects.
+Interactive map of Research & Development centers in Moscow, visualizing data from EGISU NIOKTR for 2025.
+
+- **Status**: Version 1.1 (AI-Enhanced)
+- **Live Site**: [https://rnd-map-moscow-2025.onrender.com](https://rnd-map-moscow-2025.onrender.com)
+- **Source Code**: [https://github.com/ionplatox-blip/rnd-map-moscow-2025](https://github.com/ionplatox-blip/rnd-map-moscow-2025)
 
 ## Tech Stack
 - **Frontend**: React + TypeScript + Vite
+- **Backend (AI Search)**: FastAPI + Python + FAISS
+- **LLM Integration**: OpenRouter (Gemini 2.0 / GPT-4o-mini)
 - **Map Engine**: Leaflet (react-leaflet) + OpenStreetMap
 - **Styling**: CSS (Glassmorphism design system)
-- **Data**: JSON-based static data (`map_index.json`, `center/*.json`) pre-processed from Python scripts.
+- **Data**: JSON + Vector Embeddings (Sentence-Transformers)
 
 ## Key Features
+- **AI Semantic Search**: Uses vector embeddings to find projects by meaning, not just keywords.
+- **AI Query Rewriting**: Uses LLMs to refine user queries into professional R&D terminology.
 - **Interactive Map**: Clustering markers, color-coded by funding tier.
-- **Advanced Search**: Weighted keyword search, supports acronyms and "TehZadanie" (TZ) text matching.
-- **Filtering**: Filter by funding amount (Small <100M, Medium 100M-1B, Large >1B).
+- **Sorting Logic**: Prioritizes "In Progress" projects and sorts by date descending.
 - **Organization Details**:
   - Detailed sidebar with project lists and RID (Intellectual Property) counts.
   - Financial data visualization.
-  - Full legal names displayed alongside acronyms.
-
-## Data Pipeline
-Data is processed using Python scripts in `../scripts/`:
-- `preprocess.py`: Cleans raw Excel exports and generates JSON.
-- `geocoding.py`: Geo-locates addresses (Yandex/OSM).
-- `update_addresses.py`: Patches coordinates for specific organizations.
+  - "Go to Organization" flow with persistent project highlighting.
 
 ## Project Structure
-- `/app`: React application
-  - `/public/data`: Generated JSON data
-  - `/src/components`: UI Components (MapView, Sidebar, Header, etc.)
-- `/scripts`: Data processing utilities
+- `/app`: React application (Frontend)
+- `/fastapi_server`: AI Search API (Backend)
+- `/scripts`: Data processing and indexing utilities
+- `faiss.index`: Vector database for semantic search
+- `projects_metadata.jsonl`: Metadata for fast lookup
 
 ## Context for AI
-When working on this project:
-1. **Search Logic**: Located in `App.tsx`. Uses token-based scoring.
-2. **Map Interaction**: `MapView.tsx` handles markers and popups.
-3. **Data format**: `map_index.json` is the main index. Detailed data is loaded on-demand from `data/centers/{ogrn}.json`.
+1. **AI Search**: Backend logic in `fastapi_server/main.py`. Frontend calls `/ai-search`.
+2. **Search Logic**: Token-based logic in `App.tsx` (Sidebar sorting) + Vector search on backend.
+3. **Map Interaction**: `MapView.tsx` handles markers and popups.
+4. **Data format**: Hybrid storage (Static JSON for mapping, JSONL for search metadata).

@@ -11,4 +11,7 @@ open_data_*.json
 app/public/data/moscow_rd_centers.json
 public/data/moscow_rd_centers.json
 *.xlsx
-
+venv/
+.python-version
+.env.local
+.env.*.local

@@ -57,6 +57,7 @@ export interface CenterDetail {
 
 export interface ProjectEntry {
     name: string;
+    registration_number?: string;
     report_type: string;
     stage_start_date: string;
     stage_end_date: string;
@@ -74,4 +75,27 @@ export interface MapData {
     total_centers: number;
     centers: MapCenter[];
 }
+// Search Types
 export type FundingTier = 'all' | 'small' | 'medium' | 'large';
+export type SearchScope = 'center' | 'project' | 'rid' | null;
+
+export interface MatchReason {
+    type: 'name' | 'project' | 'rid' | 'domain' | 'keyword';
+    detail?: string;
+    projectId?: string;
+    matchCount?: number;
+    matchIds?: string[]; // Names or IDs of matched projects/RIDs
+}
+
+// ... types.ts
+export interface SearchResult {
+    project_id: string;
+    center_id: string;
+    center_name: string;
+    title: string;
+    year: string;
+    score: number;
+    why_matched?: string;
+    evidence_snippets?: string[];
+}
+

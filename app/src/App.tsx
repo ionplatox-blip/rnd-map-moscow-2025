@@ -70,12 +70,30 @@ function App() {
     // Clear selected center to show results
     setSelectedCenter(null);
 
-    let API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+    // Determine API URL:
+    // 1. Use VITE_API_URL if set (build-time env var)
+    // 2. On Render, derive backend URL from frontend URL
+    // 3. Fallback to localhost for local dev
+    let API_URL = import.meta.env.VITE_API_URL || '';
+
+    if (!API_URL) {
+      const hostname = window.location.hostname;
+      if (hostname.includes('onrender.com')) {
+        // Derive backend URL: rnd-map-frontend.onrender.com -> rnd-map-backend.onrender.com
+        API_URL = `https://${hostname.replace('-frontend', '-backend')}`;
+      } else {
+        API_URL = 'http://localhost:8000';
+      }
+    }
+
     if (API_URL && !API_URL.startsWith('http')) {
       API_URL = `https://${API_URL}`;
     }
 
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout
+
       const response = await fetch(`${API_URL}/ai-search`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -85,15 +103,19 @@ function App() {
           use_rewrite: true,
           use_rerank: true
         }),
+        signal: controller.signal,
       });
 
-      if (!response.ok) throw new Error('Search failed');
+      clearTimeout(timeoutId);
+
+      if (!response.ok) throw new Error(`Server error: ${response.status}`);
 
       const data: SearchResponse = await response.json();
       setAiResults(data.results);
     } catch (error) {
       console.error('AI Search Error:', error);
-      // Handle error (maybe show toast or state)
+      // Show empty results with error indicator so user sees feedback
+      setAiResults([]);
     } finally {
       setAiLoading(false);
     }

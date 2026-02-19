@@ -263,7 +263,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
                             <>
                                 <h2 className="sidebar-title">⚡ Результаты ИИ Поиска</h2>
                                 <p className="sidebar-subtitle" style={{ color: '#888' }}>
-                                    {aiLoading ? 'Анализирую базу знаний...' : `Найдено ${aiResults?.length || 0} подходящих проектов`}
+                                    {aiLoading ? 'Анализирую базу знаний...' :
+                                        (aiResults?.length || 0) > 0 ? `Найдено ${aiResults?.length} подходящих проектов` :
+                                            'Сервер загружается... Попробуйте ещё раз через минуту'}
                                 </p>
                             </>
                         )}

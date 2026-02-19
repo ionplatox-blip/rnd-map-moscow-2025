@@ -10,7 +10,7 @@ load_dotenv()
 
 # Config
 # We use the same model as in the backend
-MODEL_NAME = os.getenv("EMBEDDINGS_MODEL", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+MODEL_NAME = os.getenv("EMBEDDINGS_MODEL", "intfloat/multilingual-e5-small")
 INPUT_FILE = "projects_search_text.jsonl"
 OUTPUT_INDEX = "faiss.index"
 BATCH_SIZE = 64

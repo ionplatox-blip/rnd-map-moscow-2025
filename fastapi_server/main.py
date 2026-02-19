@@ -21,9 +21,9 @@ load_dotenv(".env")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 MODEL_REWRITE = os.getenv("LLM_MODEL_REWRITE", "google/gemini-2.0-flash-lite-001")
 MODEL_RERANK = os.getenv("LLM_MODEL_RERANK", "google/gemini-2.0-flash-lite-001")
-# FastEmbed supports many models. Default is a small English one. 
-# We use a multilingual one for R&D Map.
-EMBEDDINGS_MODEL = os.getenv("EMBEDDINGS_MODEL", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+# Default for fastembed is BAAI/bge-small-en-v1.5. 
+# We use the same model as in the backend
+MODEL_NAME = os.getenv("EMBEDDINGS_MODEL", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
 
 # Globals
 app = FastAPI(title="R&D Map AI Search MVP")

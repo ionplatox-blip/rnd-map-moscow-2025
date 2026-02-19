@@ -72,15 +72,15 @@ function App() {
 
     // Determine API URL:
     // 1. Use VITE_API_URL if set (build-time env var)
-    // 2. On Render, derive backend URL from frontend URL
+    // 2. On Render, use the known backend URL
     // 3. Fallback to localhost for local dev
     let API_URL = import.meta.env.VITE_API_URL || '';
 
     if (!API_URL) {
       const hostname = window.location.hostname;
       if (hostname.includes('onrender.com')) {
-        // Derive backend URL: rnd-map-frontend.onrender.com -> rnd-map-backend.onrender.com
-        API_URL = `https://${hostname.replace('-frontend', '-backend')}`;
+        // Use the known backend service name on Render
+        API_URL = 'https://rnd-map-backend.onrender.com';
       } else {
         API_URL = 'http://localhost:8000';
       }
@@ -92,7 +92,7 @@ function App() {
 
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30s timeout
+      const timeoutId = setTimeout(() => controller.abort(), 60000); // 60s timeout (Render cold start can be slow)
 
       const response = await fetch(`${API_URL}/ai-search`, {
         method: 'POST',
@@ -110,7 +110,10 @@ function App() {
 
       if (!response.ok) throw new Error(`Server error: ${response.status}`);
 
-      const data: SearchResponse = await response.json();
+      const text = await response.text();
+      if (!text) throw new Error('Empty response from server');
+
+      const data: SearchResponse = JSON.parse(text);
       setAiResults(data.results);
     } catch (error) {
       console.error('AI Search Error:', error);

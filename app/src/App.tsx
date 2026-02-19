@@ -70,8 +70,10 @@ function App() {
     // Clear selected center to show results
     setSelectedCenter(null);
 
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
     try {
-      const response = await fetch('http://localhost:8000/ai-search', {
+      const response = await fetch(`${API_URL}/ai-search`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -4,6 +4,7 @@ import json
 import logging
 import faiss
 import numpy as np
+import gc
 from typing import List, Optional
 from fastapi import FastAPI, HTTPException, Body
 from fastapi.middleware.cors import CORSMiddleware
@@ -74,31 +75,36 @@ async def startup_event():
     try:
         logger.info(f"Loading Embedding Model: {EMBEDDINGS_MODEL} via fastembed")
         embed_model = TextEmbedding(model_name=EMBEDDINGS_MODEL)
+        gc.collect()
     except Exception as e:
         logger.error(f"Failed to load embedding model: {e}")
     
-    # 2. Load FAISS Index
-    logger.info("Loading FAISS Index...")
+    # 2. Load FAISS Index (using MMAP for memory efficiency)
+    logger.info("Loading FAISS Index with MMAP...")
     index_paths = ["faiss.index", "fastapi_server/faiss.index", "../faiss.index"]
     for p in index_paths:
         if os.path.exists(p):
-            faiss_index = faiss.read_index(p)
-            logger.info(f"Loaded index from {p} ({faiss_index.ntotal} vectors).")
+            faiss_index = faiss.read_index(p, faiss.IO_FLAG_MMAP)
+            logger.info(f"Loaded index from {p} ({faiss_index.ntotal} vectors) using MMAP.")
             break
     if not faiss_index:
         logger.warning("FAISS index not found!")
+    
+    gc.collect()
         
-    # 3. Load Metadata
-    logger.info("Loading Metadata...")
+    # 3. Load Metadata (as raw strings to minimize Python object overhead)
+    logger.info("Loading Metadata (Lazy)...")
     meta_paths = ["projects_metadata.jsonl", "fastapi_server/projects_metadata.jsonl", "../projects_metadata.jsonl"]
     for p in meta_paths:
         if os.path.exists(p):
             with open(p, "r", encoding="utf-8") as f:
-                metadata = [json.loads(line) for line in f]
-            logger.info(f"Loaded {len(metadata)} metadata records.")
+                metadata = f.readlines()
+            logger.info(f"Loaded {len(metadata)} raw metadata lines.")
             break
     if not metadata:
         logger.warning("Metadata not found!")
+
+    gc.collect()
 
     # 4. Init OpenAI (OpenRouter)
     if OPENROUTER_API_KEY:
@@ -164,9 +170,12 @@ async def search(req: SearchRequest):
     for score, idx in zip(scores[0], indices[0]):
         if idx < 0 or idx >= len(metadata):
             continue
-        meta = metadata[idx]
-        # Use simple dict for candidates if SearchResult is strict, 
-        # or ensure all fields are mapped.
+        try:
+            meta = json.loads(metadata[idx])
+        except Exception as e:
+            logger.error(f"Failed to parse metadata at index {idx}: {e}")
+            continue
+
         candidates.append({
             "project_id": meta["project_id"],
             "center_id": meta["center_id"],

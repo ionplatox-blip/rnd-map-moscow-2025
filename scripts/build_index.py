@@ -1,7 +1,7 @@
 import json
 import numpy as np
 import faiss
-from sentence_transformers import SentenceTransformer
+from fastembed import TextEmbedding
 import time
 import os
 from dotenv import load_dotenv
@@ -9,14 +9,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Config
+# We use the same model as in the backend
 MODEL_NAME = os.getenv("EMBEDDINGS_MODEL", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
 INPUT_FILE = "projects_search_text.jsonl"
 OUTPUT_INDEX = "faiss.index"
 BATCH_SIZE = 64
 
 def main():
-    print(f"Loading model: {MODEL_NAME}...")
-    model = SentenceTransformer(MODEL_NAME)
+    print(f"Loading model: {MODEL_NAME} via fastembed...")
+    model = TextEmbedding(model_name=MODEL_NAME)
     
     # Load data
     print(f"Loading data from {INPUT_FILE}...")
@@ -34,7 +35,9 @@ def main():
     # Encode
     print("Encoding...")
     start_time = time.time()
-    embeddings = model.encode(texts, batch_size=BATCH_SIZE, show_progress_bar=True, convert_to_numpy=True)
+    # model.embed returns a generator of numpy arrays
+    embeddings_gen = model.embed(texts, batch_size=BATCH_SIZE)
+    embeddings = np.array(list(embeddings_gen)).astype('float32')
     print(f"Encoding finished in {time.time() - start_time:.2f}s.")
     
     # Build FAISS index

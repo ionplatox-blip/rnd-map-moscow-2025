@@ -7,7 +7,7 @@ import numpy as np
 from typing import List, Optional
 from fastapi import FastAPI, HTTPException, Body
 from fastapi.middleware.cors import CORSMiddleware
-from sentence_transformers import SentenceTransformer
+from fastembed import TextEmbedding
 from pydantic import BaseModel
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -19,8 +19,10 @@ logger = logging.getLogger("aisearch")
 # Load Env
 load_dotenv(".env")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-MODEL_REWRITE = os.getenv("LLM_MODEL_REWRITE", "google/gemini-2.0-flash-lite-preview-02-05:free")
-MODEL_RERANK = os.getenv("LLM_MODEL_RERANK", "google/gemini-2.0-flash-lite-preview-02-05:free")
+MODEL_REWRITE = os.getenv("LLM_MODEL_REWRITE", "google/gemini-2.0-flash-lite-001")
+MODEL_RERANK = os.getenv("LLM_MODEL_RERANK", "google/gemini-2.0-flash-lite-001")
+# FastEmbed supports many models. Default is a small English one. 
+# We use a multilingual one for R&D Map.
 EMBEDDINGS_MODEL = os.getenv("EMBEDDINGS_MODEL", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
 
 # Globals
@@ -63,92 +65,65 @@ class SearchResponse(BaseModel):
     timings_ms: dict
     results: List[SearchResult]
 
-
-# Startup
 @app.on_event("startup")
-def startup_event():
+async def startup_event():
     global embed_model, faiss_index, metadata, openai_client
     
-    logger.info("Loading Embedding Model...")
-    embed_model = SentenceTransformer(EMBEDDINGS_MODEL)
+    # 1. Load Embedding Model (FastEmbed - uses ONNX, much lighter than PyTorch)
+    try:
+        logger.info(f"Loading Embedding Model: {EMBEDDINGS_MODEL} via fastembed")
+        embed_model = TextEmbedding(model_name=EMBEDDINGS_MODEL)
+    except Exception as e:
+        logger.error(f"Failed to load embedding model: {e}")
     
+    # 2. Load FAISS Index
     logger.info("Loading FAISS Index...")
-    # Try multiple paths
-    index_paths = ["faiss.index", "scripts/faiss.index", "../faiss.index"]
+    index_paths = ["faiss.index", "fastapi_server/faiss.index", "../faiss.index"]
     for p in index_paths:
         if os.path.exists(p):
             faiss_index = faiss.read_index(p)
             logger.info(f"Loaded index from {p} ({faiss_index.ntotal} vectors).")
             break
     if not faiss_index:
-        logger.warning("FAISS index not found in common paths! Run scripts/build_index.py first.")
+        logger.warning("FAISS index not found!")
         
+    # 3. Load Metadata
     logger.info("Loading Metadata...")
-    meta_paths = ["projects_metadata.jsonl", "scripts/projects_metadata.jsonl", "../projects_metadata.jsonl"]
+    meta_paths = ["projects_metadata.jsonl", "fastapi_server/projects_metadata.jsonl", "../projects_metadata.jsonl"]
     for p in meta_paths:
         if os.path.exists(p):
             with open(p, "r", encoding="utf-8") as f:
                 metadata = [json.loads(line) for line in f]
-            logger.info(f"Loaded {len(metadata)} metadata records from {p}.")
+            logger.info(f"Loaded {len(metadata)} metadata records.")
             break
     if not metadata:
         logger.warning("Metadata not found!")
 
-        
+    # 4. Init OpenAI (OpenRouter)
     if OPENROUTER_API_KEY:
         openai_client = OpenAI(
             base_url="https://openrouter.ai/api/v1",
             api_key=OPENROUTER_API_KEY,
         )
-        logger.info(f"OpenAI Client Init. Model: {MODEL_REWRITE}")
+        logger.info(f"OpenAI (OpenRouter) Client Init Success.")
     else:
-        logger.warning("OPENROUTER_API_KEY missing! LLM features disabled.")
+        logger.warning("OPENROUTER_API_KEY missing!")
 
-# Logic
 def rewrite_query(query: str) -> str:
     if not openai_client:
         return query
-    
-    start = time.time()
     try:
         completion = openai_client.chat.completions.create(
             model=MODEL_REWRITE,
             messages=[
-                {"role": "system", "content": "You are a bilingual (RU/EN) technical search assistant. Rewrite user query into precise scientific/engineering terminology. Return ONLY the rewritten query in the same language as input (or English if technical). No quotes."},
+                {"role": "system", "content": "You are a bilingual (RU/EN) technical search assistant. Rewrite user query into precise scientific/engineering terminology. Return ONLY the rewritten query. No quotes."},
                 {"role": "user", "content": f"Query: {query}"}
             ]
         )
-        rewritten = completion.choices[0].message.content.strip()
-        logger.info(f"Rewrite: {query} -> {rewritten} ({time.time()-start:.2f}s)")
-        return rewritten
+        return completion.choices[0].message.content.strip()
     except Exception as e:
         logger.error(f"Rewrite failed: {e}")
         return query
-
-def rerank_results(query: str, candidates: List[dict], top_k: int) -> List[dict]:
-    if not openai_client:
-        return candidates[:top_k]
-    
-    # Construct prompt
-    candidates_text = ""
-    for i, c in enumerate(candidates):
-        # We need the full search text for valid reranking, but metadata only has title/year.
-        # Ideally we load search text too. 
-        # For now, let's use Title. If search_text is needed validation, we should have loaded it.
-        # Let's assume we load search text into memory or read lazily.
-        # Quick fix: Load search texts into memory at startup too? 20k lines, OK.
-        pass
-
-    # ... simplified rerank for now: just return candidates
-    # To implement rerank properly we need the project abstract.
-    # Let's Skip complex rerank in MVP v0.1 and just return FAISS results with dummy "ai_score".
-    return candidates[:top_k]
-
-# Better Rerank: requires loading abstract.
-# Let's load abstract in metadata for MVP usage?
-# In prepare_data.py, I excluded abstract from metadata to save memory?
-# "We store minimal metadata for display. Full text is only in search_text."
-# I should load search_text for reranking.
 
 @app.post("/ai-search", response_model=SearchResponse)
 async def search(req: SearchRequest):
@@ -164,16 +139,21 @@ async def search(req: SearchRequest):
         rewritten = q_search
         timings["rewrite"] = (time.time() - t_start) * 1000
         
-    # 2. Embed
+    # 2. Embed (FastEmbed returns a generator of numpy arrays)
     t_start = time.time()
-    vec = embed_model.encode([q_search], convert_to_numpy=True)
+    if not embed_model:
+        raise HTTPException(500, "Embedding model not loaded")
+    
+    # fastembed.encode returns list/generator of vectors
+    embeddings_gen = embed_model.encode([q_search])
+    vec = np.array(list(embeddings_gen)).astype('float32')
     faiss.normalize_L2(vec)
     timings["embed"] = (time.time() - t_start) * 1000
     
     # 3. Retrieve
     t_start = time.time()
     if not faiss_index:
-        raise HTTPException(500, "Index not loaded")
+        raise HTTPException(500, "FAISS Index not loaded")
         
     scores, indices = faiss_index.search(vec, req.top_k_candidates)
     timings["retrieve"] = (time.time() - t_start) * 1000
@@ -183,21 +163,21 @@ async def search(req: SearchRequest):
         if idx < 0 or idx >= len(metadata):
             continue
         meta = metadata[idx]
+        # Use simple dict for candidates if SearchResult is strict, 
+        # or ensure all fields are mapped.
         candidates.append({
             "project_id": meta["project_id"],
             "center_id": meta["center_id"],
             "center_name": meta["center_name"],
             "title": meta["title"],
-            "year": meta["year"],
+            "year": str(meta.get("year", "N/A")),
             "score": float(score),
             "evidence_snippets": [f"Семантическое сходство: {score:.4f}"]
         })
         
-    # 4. Rerank (Placeholder for MVP v0.1)
-    results = candidates[:req.top_k_results]
-    
-    # 5. Explain (Placeholder)
-    # If we had abstracts, we could ask LLM "Why?"
+    # 4. Rerank / Limit
+    results_raw = candidates[:req.top_k_results]
+    results = [SearchResult(**r) for r in results_raw]
     
     return {
         "query_original": req.query,

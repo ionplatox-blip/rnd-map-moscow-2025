@@ -23,7 +23,8 @@ MODEL_REWRITE = os.getenv("LLM_MODEL_REWRITE", "google/gemini-2.0-flash-lite-001
 MODEL_RERANK = os.getenv("LLM_MODEL_RERANK", "google/gemini-2.0-flash-lite-001")
 # Default for fastembed is BAAI/bge-small-en-v1.5. 
 # We use the same model as in the backend
-MODEL_NAME = os.getenv("EMBEDDINGS_MODEL", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+EMBEDDINGS_MODEL = os.getenv("EMBEDDINGS_MODEL", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+
 
 # Globals
 app = FastAPI(title="R&D Map AI Search MVP")
@@ -144,8 +145,9 @@ async def search(req: SearchRequest):
     if not embed_model:
         raise HTTPException(500, "Embedding model not loaded")
     
-    # fastembed.encode returns list/generator of vectors
-    embeddings_gen = embed_model.encode([q_search])
+    # fastembed.embed returns list/generator of vectors
+    embeddings_gen = embed_model.embed([q_search])
+
     vec = np.array(list(embeddings_gen)).astype('float32')
     faiss.normalize_L2(vec)
     timings["embed"] = (time.time() - t_start) * 1000

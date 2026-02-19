@@ -8,7 +8,6 @@ import gc
 from typing import List, Optional
 from fastapi import FastAPI, HTTPException, Body
 from fastapi.middleware.cors import CORSMiddleware
-from fastembed import TextEmbedding
 from pydantic import BaseModel
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -21,15 +20,10 @@ logger = logging.getLogger("aisearch")
 load_dotenv(".env")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 MODEL_REWRITE = os.getenv("LLM_MODEL_REWRITE", "google/gemini-2.0-flash-lite-001")
-MODEL_RERANK = os.getenv("LLM_MODEL_RERANK", "google/gemini-2.0-flash-lite-001")
-# Default for fastembed is BAAI/bge-small-en-v1.5. 
-# We use the same model as in the backend
-EMBEDDINGS_MODEL = os.getenv("EMBEDDINGS_MODEL", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
-
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "openai/text-embedding-3-small")
 
 # Globals
 app = FastAPI(title="R&D Map AI Search MVP")
-embed_model = None
 faiss_index = None
 metadata = []
 openai_client = None
@@ -67,18 +61,32 @@ class SearchResponse(BaseModel):
     timings_ms: dict
     results: List[SearchResult]
 
+
+def get_embedding(text: str) -> np.ndarray:
+    """Get embedding via OpenRouter (OpenAI-compatible API)."""
+    if not openai_client:
+        raise RuntimeError("OpenAI client not initialized")
+    resp = openai_client.embeddings.create(
+        model=EMBEDDING_MODEL,
+        input=text,
+    )
+    return np.array(resp.data[0].embedding, dtype="float32")
+
+
 @app.on_event("startup")
 async def startup_event():
-    global embed_model, faiss_index, metadata, openai_client
-    
-    # 1. Load Embedding Model (FastEmbed - uses ONNX, much lighter than PyTorch)
-    try:
-        logger.info(f"Loading Embedding Model: {EMBEDDINGS_MODEL} via fastembed")
-        embed_model = TextEmbedding(model_name=EMBEDDINGS_MODEL)
-        gc.collect()
-    except Exception as e:
-        logger.error(f"Failed to load embedding model: {e}")
-    
+    global faiss_index, metadata, openai_client
+
+    # 1. Init OpenRouter client (used for BOTH rewrite AND embeddings)
+    if OPENROUTER_API_KEY:
+        openai_client = OpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key=OPENROUTER_API_KEY,
+        )
+        logger.info(f"OpenRouter Client Init Success. Embedding model: {EMBEDDING_MODEL}")
+    else:
+        logger.warning("OPENROUTER_API_KEY missing!")
+
     # 2. Load FAISS Index (using MMAP for memory efficiency)
     logger.info("Loading FAISS Index with MMAP...")
     index_paths = ["faiss.index", "fastapi_server/faiss.index", "../faiss.index"]
@@ -89,9 +97,9 @@ async def startup_event():
             break
     if not faiss_index:
         logger.warning("FAISS index not found!")
-    
+
     gc.collect()
-        
+
     # 3. Load Metadata (as raw strings to minimize Python object overhead)
     logger.info("Loading Metadata (Lazy)...")
     meta_paths = ["projects_metadata.jsonl", "fastapi_server/projects_metadata.jsonl", "../projects_metadata.jsonl"]
@@ -105,16 +113,8 @@ async def startup_event():
         logger.warning("Metadata not found!")
 
     gc.collect()
+    logger.info("Startup complete. No heavy ML models in memory.")
 
-    # 4. Init OpenAI (OpenRouter)
-    if OPENROUTER_API_KEY:
-        openai_client = OpenAI(
-            base_url="https://openrouter.ai/api/v1",
-            api_key=OPENROUTER_API_KEY,
-        )
-        logger.info(f"OpenAI (OpenRouter) Client Init Success.")
-    else:
-        logger.warning("OPENROUTER_API_KEY missing!")
 
 def rewrite_query(query: str) -> str:
     if not openai_client:
@@ -132,11 +132,12 @@ def rewrite_query(query: str) -> str:
         logger.error(f"Rewrite failed: {e}")
         return query
 
+
 @app.post("/ai-search", response_model=SearchResponse)
 async def search(req: SearchRequest):
     t0 = time.time()
     timings = {}
-    
+
     # 1. Rewrite
     q_search = req.query
     rewritten = None
@@ -145,27 +146,29 @@ async def search(req: SearchRequest):
         q_search = rewrite_query(req.query)
         rewritten = q_search
         timings["rewrite"] = (time.time() - t_start) * 1000
-        
-    # 2. Embed (FastEmbed returns a generator of numpy arrays)
-    t_start = time.time()
-    if not embed_model:
-        raise HTTPException(500, "Embedding model not loaded")
-    
-    # fastembed.embed returns list/generator of vectors
-    embeddings_gen = embed_model.embed([q_search])
 
-    vec = np.array(list(embeddings_gen)).astype('float32')
-    faiss.normalize_L2(vec)
+    # 2. Embed via OpenRouter API (no local model needed!)
+    t_start = time.time()
+    if not openai_client:
+        raise HTTPException(500, "OpenRouter client not initialized")
+
+    try:
+        vec = get_embedding(q_search).reshape(1, -1)
+        faiss.normalize_L2(vec)
+    except Exception as e:
+        logger.error(f"Embedding API call failed: {e}")
+        raise HTTPException(500, f"Embedding failed: {e}")
+
     timings["embed"] = (time.time() - t_start) * 1000
-    
+
     # 3. Retrieve
     t_start = time.time()
     if not faiss_index:
         raise HTTPException(500, "FAISS Index not loaded")
-        
+
     scores, indices = faiss_index.search(vec, req.top_k_candidates)
     timings["retrieve"] = (time.time() - t_start) * 1000
-    
+
     candidates = []
     for score, idx in zip(scores[0], indices[0]):
         if idx < 0 or idx >= len(metadata):
@@ -185,11 +188,11 @@ async def search(req: SearchRequest):
             "score": float(score),
             "evidence_snippets": [f"Семантическое сходство: {score:.4f}"]
         })
-        
+
     # 4. Rerank / Limit
     results_raw = candidates[:req.top_k_results]
     results = [SearchResult(**r) for r in results_raw]
-    
+
     return {
         "query_original": req.query,
         "rewritten_query": rewritten,

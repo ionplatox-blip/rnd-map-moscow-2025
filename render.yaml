@@ -4,26 +4,14 @@ services:
     name: rnd-map-backend
     env: python
     plan: free
-    buildCommand: pip install -r fastapi_server/requirements.txt && python -c "from fastembed import TextEmbedding; TextEmbedding(model_name='sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2', cache_dir='./model_cache')"
+    buildCommand: pip install -r fastapi_server/requirements.txt
     startCommand: uvicorn fastapi_server.main:app --host 0.0.0.0 --port $PORT --workers 1
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.18
       - key: OPENROUTER_API_KEY
         sync: false
-      - key: FASTEMBED_CACHE_PATH
-        value: ./model_cache
       - key: WEB_CONCURRENCY
-        value: 1
-      - key: OMP_NUM_THREADS
-        value: 1
-      - key: MKL_NUM_THREADS
-        value: 1
-      - key: OPENBLAS_NUM_THREADS
-        value: 1
-      - key: VECLIB_MAXIMUM_THREADS
-        value: 1
-      - key: NUMEXPR_NUM_THREADS
         value: 1
     autoDeploy: true
 

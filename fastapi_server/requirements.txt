@@ -3,6 +3,5 @@ uvicorn
 openai
 faiss-cpu
 numpy
-fastembed
 pydantic
 python-dotenv

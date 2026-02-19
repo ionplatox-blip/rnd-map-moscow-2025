@@ -23,5 +23,5 @@ services:
         fromService:
           type: web
           name: rnd-map-backend
-          property: url
+          property: host
     autoDeploy: true

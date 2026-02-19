@@ -70,7 +70,10 @@ function App() {
     // Clear selected center to show results
     setSelectedCenter(null);
 
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+    let API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+    if (API_URL && !API_URL.startsWith('http')) {
+      API_URL = `https://${API_URL}`;
+    }
 
     try {
       const response = await fetch(`${API_URL}/ai-search`, {

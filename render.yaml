@@ -3,6 +3,7 @@ services:
   - type: web
     name: rnd-map-backend
     env: python
+    plan: free
     buildCommand: pip install -r fastapi_server/requirements.txt
     startCommand: uvicorn fastapi_server.main:app --host 0.0.0.0 --port $PORT
     envVars:
@@ -16,6 +17,7 @@ services:
   - type: web
     name: rnd-map-frontend
     env: static
+    plan: free
     buildCommand: cd app && npm install && npm run build
     staticPublishPath: app/dist
     envVars:
